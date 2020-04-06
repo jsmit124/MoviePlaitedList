@@ -38,3 +38,68 @@
 1584559148 source:/home/dyoder/Documents/Code/MoviePlaiter/View/OKCancelWindow.cpp
 	"OKCancelWindow.h"
 
+1586215267 source:/home/justinsmith/Desktop/MoviePlaiter/main.cpp
+	"MovieLibraryWindow.h"
+
+1584652050 /home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.h
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Round_Button.H>
+	<FL/Fl_Output.H>
+	<FL/Fl_Text_Buffer.H>
+	<FL/Fl_Text_Display.H>
+	<FL/Fl_Button.H>
+	<vector>
+	<string>
+
+1584650176 source:/home/justinsmith/Desktop/MoviePlaiter/Model/Movie.cpp
+	"Movie.h"
+
+1584650328 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
+	<string>
+
+1584559163 source:/home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1553005593 /home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.h
+	<string>
+
+1584651950 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
+	"AddMovieWindow.h"
+	"Utils.h"
+	<Fl/fl_ask.H>
+	<sstream>
+
+1584560854 /home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.h
+	"OKCancelWindow.h"
+	"Movie.h"
+	<Fl/Fl_Input.H>
+
+1584559154 /home/justinsmith/Desktop/MoviePlaiter/View/OKCancelWindow.h
+	<Fl/Fl_Window.H>
+	<Fl/Fl_Button.H>
+
+1584561528 source:/home/justinsmith/Desktop/MoviePlaiter/View/DeleteMovieWindow.cpp
+	"DeleteMovieWindow.h"
+	<iostream>
+
+1584561373 /home/justinsmith/Desktop/MoviePlaiter/View/DeleteMovieWindow.h
+	"OKCancelWindow.h"
+	<Fl/Fl_Input.H>
+	<string>
+
+1584652121 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
+	"MovieLibraryWindow.h"
+	"DeleteMovieWindow.h"
+	"AddMovieWindow.h"
+	<FL/fl_types.h>
+	<Fl/fl_draw.H>
+	<Fl/Fl_File_Chooser.H>
+	<iostream>
+
+1584559148 source:/home/justinsmith/Desktop/MoviePlaiter/View/OKCancelWindow.cpp
+	"OKCancelWindow.h"
+

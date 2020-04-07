@@ -7,6 +7,9 @@
 #include <Fl/fl_draw.H>
 #include <Fl/Fl_File_Chooser.H>
 
+#include "Controller/Controller.h"
+using namespace controller;
+
 #define DIAGNOSTIC_OUTPUT
 
 #ifdef DIAGNOSTIC_OUTPUT
@@ -53,6 +56,8 @@ MovieLibraryWindow::MovieLibraryWindow(int width, int height, const char* title)
     this->deleteButton->callback(cbDeleteMovie, this);
 
     this->setSummaryText("Demo of how to set the summary text.");
+
+    this->controller = Controller();
 
     end();
 }
@@ -236,6 +241,12 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
         Fl::wait();
     }
 
+    if (addMovie.getMovie() != 0)
+    {
+        auto pMovie = addMovie.getMovie();
+        controller->addToMovieList(*pMovie);
+    }
+
 #ifdef DIAGNOSTIC_OUTPUT
     // TODO Remove or adapt code below, currently in for demo purposes
     if (addMovie.getWindowResult() == OKCancelWindow::WindowResult::OK)
@@ -255,6 +266,8 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
 #endif
 
 }
+
+
 
 //
 // Callback when the Delete button is invoked

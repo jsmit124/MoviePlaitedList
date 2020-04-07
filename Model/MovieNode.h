@@ -10,6 +10,7 @@ namespace model {
 class MovieNode
 {
     public:
+        MovieNode();
         MovieNode(Movie * movieInfo, MovieNode * nextName, MovieNode * nextLength, MovieNode * nextRating);
         virtual ~MovieNode();
 

@@ -60,7 +60,6 @@ void AddMovieWindow::okHandler()
         fl_message("%s", message);
     }
 
-
 }
 
 Movie::Rating AddMovieWindow::determineAndSetRatingBasedOnUserInput()

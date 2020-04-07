@@ -15,6 +15,9 @@
 #include <string>
 using namespace std;
 
+#include "Controller/Controller.h"
+using namespace controller;
+
 namespace view
 {
 
@@ -54,6 +57,8 @@ private:
     Fl_Button* deleteButton;
 
     string selectedFilename;
+
+    Controller controller;
 
     void createAndDisplaySortingRadioButtons();
     void setSortOrderBasedOnSelection();

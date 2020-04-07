@@ -7,32 +7,42 @@ namespace model {
 //
 // TODO: Document this
 //
-MovieNode::MovieNode(Movie * movieInfo, MovieNode * nextName, MovieNode * nextLength, MovieNode * nextRating)
-{
-    this->movieInfo = movieInfo;
-    this->nextName = nextName;
-    this->nextLength = nextLength;
-    this->nextRating = nextRating;
-}
+MovieNode::MovieNode(Movie movie):movieInfo(&movie), nextName(0), nextLength(0), nextRating(0)
+{}
 
-Movie * MovieNode::getMovieInfo()
+Movie* MovieNode::getMovieInfo()
 {
     return this->movieInfo;
 }
 
-MovieNode * MovieNode::getNextName()
+MovieNode* MovieNode::getNextName()
 {
     return this->nextName;
 }
 
-MovieNode * MovieNode::getNextLength()
+MovieNode* MovieNode::getNextLength()
 {
     return this->nextLength;
 }
 
-MovieNode * MovieNode::getNextRating()
+MovieNode* MovieNode::getNextRating()
 {
     return this->nextRating;
+}
+
+void MovieNode::setNextName(MovieNode* nextName)
+{
+    this->nextName = nextName;
+}
+
+void MovieNode::setNextLength(MovieNode* nextLength)
+{
+    this->nextLength = nextLength;
+}
+
+void MovieNode::setNextRating(MovieNode* nextRating)
+{
+    this->nextRating = nextRating;
 }
 
 MovieNode::~MovieNode()

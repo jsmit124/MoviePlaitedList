@@ -9,20 +9,18 @@ namespace controller
 
 Controller::Controller()
 {
-    //ctor
+    this->movieList = MoviePlaitedList();
 }
 
 void Controller::addToMovieList(Movie movie)
 {
     if (this->movieList.getListSize() == 0)
     {
-        auto movieNode = MovieNode(&movie, nullptr, nullptr, nullptr);
-        this->movieList = MoviePlaitedList(movieNode);
+        this->movieList.addToHead(movie);
     }
     else
     {
-        auto movieNode = MovieNode(&movie, nullptr, nullptr, nullptr); //TODO
-        this->movieList.addMovieNode(movieNode);
+        this->movieList.addMovieNode(movie);
     }
 }
 

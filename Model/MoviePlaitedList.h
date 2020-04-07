@@ -1,29 +1,31 @@
 #ifndef MOVIEPLAITEDLIST_H
 #define MOVIEPLAITEDLIST_H
+
 #include "MovieNode.h"
 
-namespace model {
+namespace model
+{
 
 class MoviePlaitedList
 {
     public:
         MoviePlaitedList();
-        MoviePlaitedList(MovieNode headNode);
         virtual ~MoviePlaitedList();
 
-        MovieNode * getHeadNameNode();
-        MovieNode * getHeadLengthNode();
-        MovieNode * getHeadRatingNode();
+        void addToHead(const Movie&);
+        MovieNode* getHeadNameNode();
+        MovieNode* getHeadLengthNode();
+        MovieNode* getHeadRatingNode();
         int getListSize();
 
-        void addMovieNode(MovieNode movieNode);
+        void addMovieNode(const Movie& movie);
 
     protected:
 
     private:
-        MovieNode * headNameNode;
-        MovieNode * headLengthNode;
-        MovieNode * headRatingNode;
+        MovieNode* headNameNode;
+        MovieNode* headLengthNode;
+        MovieNode* headRatingNode;
 
         int listSize;
 };

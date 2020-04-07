@@ -230,8 +230,7 @@ void MovieLibraryWindow::cbSave(Fl_Widget* widget, void* data)
 //
 void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
 {
-    MovieLibraryWindow* window = (MovieLibraryWindow*)data; // TODO Currently, not used by may need to be used when adapt code
-
+    MovieLibraryWindow* window = (MovieLibraryWindow*)data;
     AddMovieWindow addMovie;
     addMovie.set_modal();
     addMovie.show();
@@ -244,7 +243,7 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
     if (addMovie.getMovie() != 0)
     {
         auto pMovie = addMovie.getMovie();
-        controller->addToMovieList(*pMovie);
+        window->controller.addToMovieList(*pMovie);
     }
 
 #ifdef DIAGNOSTIC_OUTPUT
@@ -266,8 +265,6 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
 #endif
 
 }
-
-
 
 //
 // Callback when the Delete button is invoked

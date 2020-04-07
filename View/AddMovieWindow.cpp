@@ -93,6 +93,12 @@ int AddMovieWindow::determineAndSetYearBasedOnUserInput()
 {
     string yearStr = this->yearInput->value();
     int year = toInt(yearStr, "Error converting year to an integer.");
+
+    if (year < 1888)
+    {
+        throw "Please enter a value 1888 or higher for year.";
+    }
+
     return year;
 }
 
@@ -101,6 +107,12 @@ int AddMovieWindow::determineAndSetLengthBasedOnUserInput()
 {
     string lengthStr = this->lengthInput->value();
     int length = toInt(lengthStr, "Error converting length to an integer.");
+
+    if (length < 0)
+    {
+        throw "Please enter a positive value for length.";
+    }
+
     return length;
 }
 

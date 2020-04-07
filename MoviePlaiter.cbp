@@ -28,8 +28,14 @@
 		<Linker>
 			<Add option="`fltk-config --ldstaticflags`" />
 		</Linker>
+		<Unit filename="Controller/Controller.cpp" />
+		<Unit filename="Controller/Controller.h" />
 		<Unit filename="Model/Movie.cpp" />
 		<Unit filename="Model/Movie.h" />
+		<Unit filename="Model/MovieNode.cpp" />
+		<Unit filename="Model/MovieNode.h" />
+		<Unit filename="Model/MoviePlaitedList.cpp" />
+		<Unit filename="Model/MoviePlaitedList.h" />
 		<Unit filename="Utils/Utils.cpp" />
 		<Unit filename="Utils/Utils.h" />
 		<Unit filename="View/AddMovieWindow.cpp" />

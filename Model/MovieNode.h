@@ -11,13 +11,17 @@ class MovieNode
 {
     public:
         MovieNode();
-        MovieNode(Movie * movieInfo, MovieNode * nextName, MovieNode * nextLength, MovieNode * nextRating);
+        MovieNode(Movie movie);
         virtual ~MovieNode();
 
         Movie* getMovieInfo();
         MovieNode* getNextName();
         MovieNode* getNextLength();
         MovieNode* getNextRating();
+
+        void setNextName(MovieNode* nextName);
+        void setNextLength(MovieNode* nextLength);
+        void setNextRating(MovieNode* nextRating);
 
     protected:
 

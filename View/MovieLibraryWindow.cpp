@@ -55,7 +55,7 @@ MovieLibraryWindow::MovieLibraryWindow(int width, int height, const char* title)
     this->deleteButton = new Fl_Button(360, 330, 70, 30, "Delete");
     this->deleteButton->callback(cbDeleteMovie, this);
 
-    this->setSummaryText("Demo of how to set the summary text.");
+    this->setSummaryText("Welcome to Movie Library by Justin Smith!");
 
     this->controller = Controller();
 
@@ -244,6 +244,7 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
     {
         auto pMovie = addMovie.getMovie();
         window->controller.addToMovieList(*pMovie);
+        window->setSummaryText(window->controller.getFormattedOutput());
     }
 
 #ifdef DIAGNOSTIC_OUTPUT

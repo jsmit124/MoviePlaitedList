@@ -14,6 +14,15 @@ Movie::Movie(const string& name, const string& studio, int year, Rating rating, 
     this->length = length;
 }
 
+Movie::Movie(Movie& movie)
+{
+    this->name = movie.getName();
+    this->studio = movie.getStudio();
+    this->year = movie.getYear();
+    this->rating = movie.getRating();
+    this->length = movie.getLength();
+}
+
 const string& Movie::getName() const
 {
     return this->name;

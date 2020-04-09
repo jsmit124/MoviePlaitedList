@@ -3,6 +3,10 @@
 #include "MovieNode.h"
 #include "Movie.h"
 
+#include "Utils.h"
+
+#include <string>
+#include <iostream>
 using namespace std;
 
 namespace model
@@ -11,8 +15,9 @@ namespace model
 MoviePlaitedList::MoviePlaitedList():headNameNode(0), headLengthNode(0), headRatingNode(0), listSize(0)
 {}
 
-void MoviePlaitedList::addToHead(const Movie& movie)
+void MoviePlaitedList::addToHead(Movie& movie)
 {
+
     MovieNode* newHead = new MovieNode(movie);
 
     if (this->headNameNode == 0 && this->headLengthNode == 0 && this->headRatingNode == 0)
@@ -23,9 +28,6 @@ void MoviePlaitedList::addToHead(const Movie& movie)
     }
     else
     {
-        newHead->setNextName(this->headNameNode);
-        this->headNameNode = newHead;
-
         newHead->setNextLength(this->headLengthNode);
         this->headLengthNode = newHead;
 
@@ -36,10 +38,58 @@ void MoviePlaitedList::addToHead(const Movie& movie)
     this->listSize++;
 }
 
-void MoviePlaitedList::addMovieNode(const Movie& movie)
+void MoviePlaitedList::setNameHead(MovieNode* movieNode)
+{
+    movieNode->setNextName(this->headNameNode);
+    this->headNameNode = movieNode;
+}
+
+void MoviePlaitedList::addMovieNodeByName(Movie& movie)
 {
     MovieNode* newMovieNode = new MovieNode(movie);
+    //TODO add by name
 
+    MovieNode* currNodePtr = this->headNameNode;
+    string currName = currNodePtr->getMovieInfo()->getName();
+
+    while (toUpperCase(movie.getName()).compare(toUpperCase(currName)) > 0)
+    {
+        if (currNodePtr->getNextName() == 0)
+        {
+            break;
+        }
+        else if (toUpperCase(movie.getName()).compare(toUpperCase(currNodePtr->getNextName()->getMovieInfo()->getName())) < 0)
+        {
+            break;
+        }
+
+        currNodePtr = currNodePtr->getNextName();
+        currName = currNodePtr->getMovieInfo()->getName();
+
+    }
+
+    if (currNodePtr == this->headNameNode)
+    {
+        if (toUpperCase(movie.getName()).compare(toUpperCase(currName)) < 0)
+        {
+            this->setNameHead(newMovieNode);
+        }
+        else
+        {
+            newMovieNode->setNextName(currNodePtr->getNextName());
+            currNodePtr->setNextName(newMovieNode);
+        }
+    }
+    else
+    {
+        newMovieNode->setNextName(currNodePtr->getNextName());
+        currNodePtr->setNextName(newMovieNode);
+    }
+
+    //TODO add by length
+    //TODO add by rating
+
+    this->listSize++;
 }
 
 MovieNode* MoviePlaitedList::getHeadNameNode()

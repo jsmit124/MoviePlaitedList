@@ -21,6 +21,7 @@ private:
 
 public:
     Movie(const string& name, const string& studio, int year, Rating rating, int length);
+    Movie(Movie& movie);
     virtual ~Movie();
 
     const string& getName() const;

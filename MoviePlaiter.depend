@@ -41,7 +41,7 @@
 1586215267 source:/home/justinsmith/Desktop/MoviePlaiter/main.cpp
 	"MovieLibraryWindow.h"
 
-1586268459 /home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.h
+1586378293 /home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -54,10 +54,10 @@
 	<string>
 	"Controller/Controller.h"
 
-1584650176 source:/home/justinsmith/Desktop/MoviePlaiter/Model/Movie.cpp
+1586383978 source:/home/justinsmith/Desktop/MoviePlaiter/Model/Movie.cpp
 	"Movie.h"
 
-1584650328 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
+1586383984 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
 	<string>
 
 1584559163 source:/home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.cpp
@@ -68,7 +68,7 @@
 1553005593 /home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.h
 	<string>
 
-1586222836 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
+1586273587 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
 	"AddMovieWindow.h"
 	"Utils.h"
 	<Fl/fl_ask.H>
@@ -92,7 +92,7 @@
 	<Fl/Fl_Input.H>
 	<string>
 
-1586268915 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
+1586379815 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
 	"MovieLibraryWindow.h"
 	"DeleteMovieWindow.h"
 	"AddMovieWindow.h"
@@ -105,27 +105,45 @@
 1584559148 source:/home/justinsmith/Desktop/MoviePlaiter/View/OKCancelWindow.cpp
 	"OKCancelWindow.h"
 
-1586267415 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.cpp
+1586383978 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.cpp
 	"MovieNode.h"
 	"Movie.h"
 
 1586267389 /home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.h
 	"Movie.h"
 
-1586272962 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
+1586395044 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
+	"Utils.h"
+	<string>
+	<iostream>
 
-1586272593 /home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.h
+1586392802 /home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.h
 	"MovieNode.h"
 
-1586268978 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
+1586392810 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
 	"Controller.h"
 	"MoviePlaitedList.h"
 	"MovieNode.h"
+	"Formatter/OutputFormatter.h"
+	<string>
+	<iostream>
 
-1586225372 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
+1586384781 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
 	"MoviePlaitedList.h"
 	"Movie.h"
+	"Formatter/OutputFormatter.h"
+	<string>
+
+1586384782 /home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.h
+	"MovieNode.h"
+	"Movie.h"
+	<string>
+
+1586392641 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
+	"OutputFormatter.h"
+	"Utils.h"
+	<iostream>
 

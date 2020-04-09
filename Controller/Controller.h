@@ -5,6 +5,12 @@
 #include "Movie.h"
 using namespace model;
 
+#include "Formatter/OutputFormatter.h"
+using namespace formatter;
+
+#include <string>
+using namespace std;
+
 namespace controller {
 
 class Controller
@@ -14,11 +20,14 @@ class Controller
         virtual ~Controller();
 
         void addToMovieList(Movie movie);
+        const string getFormattedOutput();
 
     protected:
 
     private:
         MoviePlaitedList movieList;
+        OutputFormatter formatter;
+
 };
 
 }

@@ -10,6 +10,7 @@ using namespace model;
 using namespace formatter;
 
 #include "IO/FileWriter.h"
+#include "IO/FileReader.h"
 using namespace io;
 
 #include <string>
@@ -27,6 +28,7 @@ class Controller
         void addToMovieList(Movie movie);
         const string getFormattedOutput();
         bool writeFile(string outFile);
+        bool readFile(string inFile);
 
     protected:
 
@@ -34,6 +36,7 @@ class Controller
         MoviePlaitedList movieList;
         OutputFormatter formatter;
         FileWriter fileWriter;
+        FileReader fileReader;
 
 };
 

@@ -92,7 +92,7 @@
 	<Fl/Fl_Input.H>
 	<string>
 
-1586397344 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
+1586401992 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
 	"MovieLibraryWindow.h"
 	"DeleteMovieWindow.h"
 	"AddMovieWindow.h"
@@ -123,16 +123,17 @@
 1586392802 /home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.h
 	"MovieNode.h"
 
-1586397372 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
+1586403804 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
 	"Controller.h"
 	"Formatter/OutputFormatter.h"
 
-1586397139 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
+1586402100 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
 	"Formatter/OutputFormatter.h"
 	"IO/FileWriter.h"
+	"IO/FileReader.h"
 	<string>
 	<iostream>
 
@@ -153,7 +154,17 @@
 	<string>
 	<iostream>
 
-1586397324 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.cpp
+1586398346 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.cpp
 	"FileWriter.h"
 	"Utils.h"
+
+1586403786 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
+	"Movie.h"
+	<vector>
+	<fstream>
+
+1586403776 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.cpp
+	"FileReader.h"
+	<iostream>
+	<sstream>
 

@@ -146,6 +146,13 @@ void MovieLibraryWindow::cbLoad(Fl_Widget* widget, void* data)
 {
     MovieLibraryWindow* window = (MovieLibraryWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::SINGLE, "Movie file to load");
+    bool fileRead = window->controller.readFile(window->getFilename());
+    if (!fileRead)
+    {
+        throw "File could not be opened or there was nothing to read.";
+    }
+
+    window->setSummaryText(window->controller.getFormattedOutput());
 
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;

@@ -11,6 +11,7 @@ Controller::Controller()
     this->movieList = MoviePlaitedList();
     this->formatter = OutputFormatter();
     this->fileWriter = FileWriter();
+    this->fileReader = FileReader();
 }
 
 void Controller::addToMovieList(Movie movie)
@@ -42,6 +43,18 @@ bool Controller::writeFile(string outFile)
     }
 
     return false;
+}
+
+bool Controller::readFile(string inFile)
+{
+    vector<Movie*> fileContents = this->fileReader.read(inFile);
+
+    for (Movie* currMovie : fileContents)
+    {
+        this->addToMovieList(*currMovie);
+    }
+    //TODO check for nothing in file
+    return true;
 }
 
 Controller::~Controller()

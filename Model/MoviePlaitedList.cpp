@@ -58,14 +58,15 @@ void MoviePlaitedList::addMovieNodeByName(Movie& movie)
         {
             break;
         }
-        else if (toUpperCase(movie.getName()).compare(toUpperCase(currNodePtr->getNextName()->getMovieInfo()->getName())) < 0)
+
+        bool comesBeforeNext = toUpperCase(movie.getName()).compare(toUpperCase(currNodePtr->getNextName()->getMovieInfo()->getName())) < 0;
+        if (comesBeforeNext)
         {
             break;
         }
 
         currNodePtr = currNodePtr->getNextName();
         currName = currNodePtr->getMovieInfo()->getName();
-
     }
 
     if (currNodePtr == this->headNameNode)
@@ -73,18 +74,12 @@ void MoviePlaitedList::addMovieNodeByName(Movie& movie)
         if (toUpperCase(movie.getName()).compare(toUpperCase(currName)) < 0)
         {
             this->setNameHead(newMovieNode);
-        }
-        else
-        {
-            newMovieNode->setNextName(currNodePtr->getNextName());
-            currNodePtr->setNextName(newMovieNode);
+            return;
         }
     }
-    else
-    {
-        newMovieNode->setNextName(currNodePtr->getNextName());
-        currNodePtr->setNextName(newMovieNode);
-    }
+
+    newMovieNode->setNextName(currNodePtr->getNextName());
+    currNodePtr->setNextName(newMovieNode);
 
     //TODO add by length
     //TODO add by rating

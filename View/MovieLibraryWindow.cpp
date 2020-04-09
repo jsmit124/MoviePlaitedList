@@ -212,6 +212,11 @@ void MovieLibraryWindow::cbSave(Fl_Widget* widget, void* data)
 {
     MovieLibraryWindow* window = (MovieLibraryWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::CREATE, "Movie file to save to");
+    bool fileWritten = window->controller.writeFile(window->getFilename());
+    if (!fileWritten)
+    {
+        throw "File could not be opened or there was nothing to save.";
+    }
 
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;

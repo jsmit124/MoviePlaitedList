@@ -1,15 +1,7 @@
 #include "Controller.h"
 
-#include "MoviePlaitedList.h"
-#include "MovieNode.h"
-using namespace model;
-
 #include "Formatter/OutputFormatter.h"
 using namespace formatter;
-
-#include <string>
-#include <iostream>
-using namespace std;
 
 namespace controller
 {
@@ -18,6 +10,7 @@ Controller::Controller()
 {
     this->movieList = MoviePlaitedList();
     this->formatter = OutputFormatter();
+    this->fileWriter = FileWriter();
 }
 
 void Controller::addToMovieList(Movie movie)
@@ -35,6 +28,20 @@ void Controller::addToMovieList(Movie movie)
 const string Controller::getFormattedOutput()
 {
     return this->formatter.formatMoviesAscendingByName(this->movieList.getHeadNameNode());
+}
+
+bool Controller::writeFile(string outFile)
+{
+    if (this->movieList.getListSize() > 0)
+    {
+        bool fileWritten = this->fileWriter.write(this->movieList.getHeadNameNode(), outFile);
+        if (fileWritten)
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 Controller::~Controller()

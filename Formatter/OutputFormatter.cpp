@@ -30,12 +30,12 @@ const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
 
         output += name + " | ";
         output += to_string(year) + " | ";
-        output += currMoviePtr->getStudio() + " | ";
+        output += studio + " | ";
 
-        cout << (Movie::Rating)currMoviePtr->getRating() << endl;
+        cout << (Movie::Rating)rating << endl;
 
         output += currMoviePtr->getRating() + " | ";
-        output += to_string(currMoviePtr->getLength()) + " minutes\n";
+        output += to_string(length) + " minutes\n";
 
         currNodePtr = currNodePtr->getNextName();
     }

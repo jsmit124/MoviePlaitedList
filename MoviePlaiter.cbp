@@ -30,6 +30,10 @@
 		</Linker>
 		<Unit filename="Controller/Controller.cpp" />
 		<Unit filename="Controller/Controller.h" />
+		<Unit filename="Formatter/OutputFormatter.cpp" />
+		<Unit filename="Formatter/OutputFormatter.h" />
+		<Unit filename="IO/FileWriter.cpp" />
+		<Unit filename="IO/FileWriter.h" />
 		<Unit filename="Model/Movie.cpp" />
 		<Unit filename="Model/Movie.h" />
 		<Unit filename="Model/MovieNode.cpp" />

@@ -87,6 +87,48 @@ void MoviePlaitedList::addMovieNodeByName(Movie& movie)
     this->listSize++;
 }
 
+bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
+{
+    MovieNode* prevNodePtr = 0;
+    MovieNode* currNodePtr = this->headNameNode;
+    string currName = "";
+
+    while (currNodePtr != 0)
+    {
+        currName = currNodePtr->getMovieInfo()->getName();
+
+        if (currName == movieName)
+        {
+            MovieNode* oldNextName = currNodePtr->getNextName();
+            MovieNode* oldNextLength = currNodePtr->getNextLength();
+            MovieNode* oldNextRating = currNodePtr->getNextRating();
+
+            currNodePtr->setNextName(0);
+            currNodePtr->setNextLength(0);
+            currNodePtr->setNextRating(0);
+            delete currNodePtr;
+
+            if (prevNodePtr == 0)
+            {
+                this->headNameNode = oldNextName;
+            }
+            else
+            {
+                prevNodePtr->setNextName(oldNextName);
+                prevNodePtr->setNextLength(oldNextLength);
+                prevNodePtr->setNextRating(oldNextRating);
+            }
+
+            return true;
+        }
+
+        prevNodePtr = currNodePtr;
+        currNodePtr = currNodePtr->getNextName();
+    }
+
+    return false;
+}
+
 MovieNode* MoviePlaitedList::getHeadNameNode()
 {
     return this->headNameNode;

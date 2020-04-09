@@ -265,24 +265,6 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
         window->setSummaryText(window->controller.getFormattedOutput());
     }
 
-#ifdef DIAGNOSTIC_OUTPUT
-    // TODO Remove or adapt code below, currently in for demo purposes
-    if (addMovie.getWindowResult() == OKCancelWindow::WindowResult::OK)
-    {
-        Movie* pMovie = addMovie.getMovie();
-        cout << "OK" << endl;
-        cout << "Name: " << pMovie->getName() << endl;
-        cout << "Studio: " << pMovie->getStudio() << endl;
-        cout << "Year: " << pMovie->getYear() << endl;
-        cout << "Rating: " << pMovie->getRating() << endl;
-        cout << "Length: " << pMovie->getLength() << endl;
-    }
-    else
-    {
-        cout << "Cancel or closed window." << endl;
-    }
-#endif
-
 }
 
 //
@@ -305,6 +287,16 @@ void MovieLibraryWindow::cbDeleteMovie(Fl_Widget* widget, void* data)
     while (deleteMovie.shown())
     {
         Fl::wait();
+    }
+
+    bool movieRemoved = window->controller.deleteFromMovieList(deleteMovie.getName());
+    if (movieRemoved)
+    {
+        window->setSummaryText(window->controller.getFormattedOutput());
+    }
+    else
+    {
+        window->setSummaryText("Remove could not be completed.\nMovie was not found or operation was cancelled.\nPlease try again.");
     }
 
 #ifdef DIAGNOSTIC_OUTPUT

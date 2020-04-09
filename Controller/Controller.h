@@ -26,6 +26,7 @@ class Controller
         virtual ~Controller();
 
         void addToMovieList(Movie movie);
+        bool deleteFromMovieList(const string& movieName);
         const string getFormattedOutput();
         bool writeFile(string outFile);
         bool readFile(string inFile);

@@ -19,6 +19,7 @@ class MoviePlaitedList
         int getListSize();
 
         void addMovieNodeByName(Movie& movie);
+        bool deleteMovieNodeByName(const string& movieName);
 
     protected:
 

@@ -26,6 +26,11 @@ void Controller::addToMovieList(Movie movie)
     }
 }
 
+bool Controller::deleteFromMovieList(const string& movieName)
+{
+    return this->movieList.deleteMovieNodeByName(movieName);
+}
+
 const string Controller::getFormattedOutput()
 {
     return this->formatter.formatMoviesAscendingByName(this->movieList.getHeadNameNode());
@@ -33,16 +38,8 @@ const string Controller::getFormattedOutput()
 
 bool Controller::writeFile(string outFile)
 {
-    if (this->movieList.getListSize() > 0)
-    {
-        bool fileWritten = this->fileWriter.write(this->movieList.getHeadNameNode(), outFile);
-        if (fileWritten)
-        {
-            return true;
-        }
-    }
 
-    return false;
+    return this->fileWriter.write(this->movieList.getHeadNameNode(), outFile);
 }
 
 bool Controller::readFile(string inFile)

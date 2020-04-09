@@ -97,7 +97,7 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
     {
         currName = currNodePtr->getMovieInfo()->getName();
 
-        if (currName == movieName)
+        if (toUpperCase(currName) == toUpperCase(movieName))
         {
             MovieNode* oldNextName = currNodePtr->getNextName();
             MovieNode* oldNextLength = currNodePtr->getNextLength();

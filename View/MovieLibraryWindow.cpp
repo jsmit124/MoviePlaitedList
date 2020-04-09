@@ -149,10 +149,12 @@ void MovieLibraryWindow::cbLoad(Fl_Widget* widget, void* data)
     bool fileRead = window->controller.readFile(window->getFilename());
     if (!fileRead)
     {
-        throw "File could not be opened or there was nothing to read.";
+        window->setSummaryText("File could not be loaded.\nEither file does not exist or there was nothing to load.\nPlease try again.");
     }
-
-    window->setSummaryText(window->controller.getFormattedOutput());
+    else
+    {
+        window->setSummaryText(window->controller.getFormattedOutput());
+    }
 
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
@@ -222,7 +224,11 @@ void MovieLibraryWindow::cbSave(Fl_Widget* widget, void* data)
     bool fileWritten = window->controller.writeFile(window->getFilename());
     if (!fileWritten)
     {
-        throw "File could not be opened or there was nothing to save.";
+        window->setSummaryText("File could not be saved.\nEither file does not exist or there was nothing to save.\nPlease try again.");
+    }
+    else
+    {
+        window->setSummaryText("File saved.");
     }
 
 #ifdef DIAGNOSTIC_OUTPUT

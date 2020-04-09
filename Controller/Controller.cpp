@@ -49,11 +49,15 @@ bool Controller::readFile(string inFile)
 {
     vector<Movie*> fileContents = this->fileReader.read(inFile);
 
+    if (fileContents.size() == 0)
+    {
+        return false;
+    }
+
     for (Movie* currMovie : fileContents)
     {
         this->addToMovieList(*currMovie);
     }
-    //TODO check for nothing in file
     return true;
 }
 

@@ -38,7 +38,6 @@ class Controller
         OutputFormatter formatter;
         FileWriter fileWriter;
         FileReader fileReader;
-
 };
 
 }

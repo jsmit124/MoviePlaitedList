@@ -147,6 +147,7 @@ void MovieLibraryWindow::cbLoad(Fl_Widget* widget, void* data)
     MovieLibraryWindow* window = (MovieLibraryWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::SINGLE, "Movie file to load");
     bool fileRead = window->controller.readFile(window->getFilename());
+
     if (!fileRead)
     {
         window->setSummaryText("File could not be loaded.\nEither file does not exist or there was nothing to load.\nPlease try again.");
@@ -155,10 +156,6 @@ void MovieLibraryWindow::cbLoad(Fl_Widget* widget, void* data)
     {
         window->setSummaryText(window->controller.getFormattedOutput());
     }
-
-#ifdef DIAGNOSTIC_OUTPUT
-    cout << "Filename selected: " << window->getFilename() << endl;
-#endif
 
 }
 
@@ -222,6 +219,7 @@ void MovieLibraryWindow::cbSave(Fl_Widget* widget, void* data)
     MovieLibraryWindow* window = (MovieLibraryWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::CREATE, "Movie file to save to");
     bool fileWritten = window->controller.writeFile(window->getFilename());
+
     if (!fileWritten)
     {
         window->setSummaryText("File could not be saved.\nEither file does not exist or there was nothing to save.\nPlease try again.");
@@ -230,10 +228,6 @@ void MovieLibraryWindow::cbSave(Fl_Widget* widget, void* data)
     {
         window->setSummaryText("File saved.");
     }
-
-#ifdef DIAGNOSTIC_OUTPUT
-    cout << "Filename selected: " << window->getFilename() << endl;
-#endif
 
 }
 
@@ -298,17 +292,6 @@ void MovieLibraryWindow::cbDeleteMovie(Fl_Widget* widget, void* data)
     {
         window->setSummaryText("Remove could not be completed.\nMovie was not found or operation was cancelled.\nPlease try again.");
     }
-
-#ifdef DIAGNOSTIC_OUTPUT
-    if (deleteMovie.getWindowResult() == OKCancelWindow::WindowResult::OK)
-    {
-        cout << "OK - Movie name: " << deleteMovie.getName() << endl;
-    }
-    else
-    {
-        cout << "Cancel or closed window." << endl;
-    }
-#endif
 
 }
 

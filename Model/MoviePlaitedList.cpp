@@ -47,7 +47,6 @@ void MoviePlaitedList::setNameHead(MovieNode* movieNode)
 void MoviePlaitedList::addMovieNodeByName(Movie& movie)
 {
     MovieNode* newMovieNode = new MovieNode(movie);
-    //TODO add by name
 
     MovieNode* currNodePtr = this->headNameNode;
     string currName = currNodePtr->getMovieInfo()->getName();

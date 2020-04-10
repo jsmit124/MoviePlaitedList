@@ -50,7 +50,7 @@ void MoviePlaitedList::addMovieNode(Movie& movie)
 {
     MovieNode* newMovieNode = new MovieNode(movie);
 
-    //this->addMovieNodeByName(newMovieNode);
+    this->addMovieNodeByName(newMovieNode);
     this->addMovieNodeByLength(newMovieNode);
     //this->addMovieNodeByRating(newMovieNode);
 
@@ -152,7 +152,6 @@ void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
         currRating = currNodePtr->getMovieInfo()->getRating();
     }
 
-    //TODO set header
     if (currNodePtr == this->headRatingNode)
     {
         if (movieNodeRating < currRating) //comes before header
@@ -170,7 +169,7 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
 {
     MovieNode* prevNodePtr = 0;
     MovieNode* currNodePtr = this->headNameNode;
-    string currName = "";
+    string currName;
 
     while (currNodePtr != 0)
     {

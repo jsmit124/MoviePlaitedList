@@ -15,56 +15,114 @@ OutputFormatter::OutputFormatter()
 
 const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
 {
-//TODO make this recursive
-    string output = "";
-    MovieNode* currNodePtr = startNode;
+    string output;
 
-    while (currNodePtr != 0)
+    if (startNode == 0)
     {
-        Movie* currMoviePtr = currNodePtr->getMovieInfo();
-
-        string name = currMoviePtr->getName();
-        string studio = currMoviePtr->getStudio();
-        int length = currMoviePtr->getLength();
-        int year = currMoviePtr->getYear();
-        Movie::Rating rating = currMoviePtr->getRating();
-
-        output += name + " | ";
-        output += to_string(year) + " | ";
-        output += studio + " | ";
-
-        cout << (Movie::Rating)rating << endl;
-
-        output += currMoviePtr->getRating() + " | ";
-        output += to_string(length) + " minutes\n";
-
-        currNodePtr = currNodePtr->getNextName();
+        return "";
     }
+
+    string name = startNode->getMovieInfo()->getName();
+    string studio = startNode->getMovieInfo()->getStudio();
+    int length = startNode->getMovieInfo()->getLength();
+    int year = startNode->getMovieInfo()->getYear();
+    Movie::Rating rating = startNode->getMovieInfo()->getRating();
+
+    output += name + " | ";
+    output += to_string(year) + " | ";
+    output += studio + " | ";
+    output += rating + " | ";
+    output += to_string(length) + " minutes\n";
+
+    output += this->formatMoviesAscendingByName(startNode->getNextName());
 
     return output;
 }
 
-const string formatMoviesDecendingByName(MovieNode* startNode);
+const string OutputFormatter::formatMoviesDecendingByName(MovieNode* startNode)
+{
+    string output;
+
+    if (startNode == 0)
+    {
+        return "";
+    }
+
+    output += this->formatMoviesDecendingByName(startNode->getNextName());
+
+    string name = startNode->getMovieInfo()->getName();
+    string studio = startNode->getMovieInfo()->getStudio();
+    int length = startNode->getMovieInfo()->getLength();
+    int year = startNode->getMovieInfo()->getYear();
+    Movie::Rating rating = startNode->getMovieInfo()->getRating();
+
+    output += name + " | ";
+    output += to_string(year) + " | ";
+    output += studio + " | ";
+    output += rating + " | ";
+    output += to_string(length) + " minutes\n";
+
+    return output;
+}
+
+const string OutputFormatter::formatMoviesAscendingByLength(MovieNode* startNode)
+{
+    string output;
+
+    if (startNode == 0)
+    {
+        return "";
+    }
+
+    string name = startNode->getMovieInfo()->getName();
+    string studio = startNode->getMovieInfo()->getStudio();
+    int length = startNode->getMovieInfo()->getLength();
+    int year = startNode->getMovieInfo()->getYear();
+    Movie::Rating rating = startNode->getMovieInfo()->getRating();
+
+    output += name + " | ";
+    output += to_string(year) + " | ";
+    output += studio + " | ";
+    output += rating + " | ";
+    output += to_string(length) + " minutes\n";
+
+    output += this->formatMoviesAscendingByLength(startNode->getNextLength());
+
+    return output;
+}
+
+const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode)
+{
+    string output;
+
+    if (startNode == 0)
+    {
+        return "";
+    }
+
+    output += this->formatMoviesDecendingByLength(startNode->getNextLength());
+
+    string name = startNode->getMovieInfo()->getName();
+    string studio = startNode->getMovieInfo()->getStudio();
+    int length = startNode->getMovieInfo()->getLength();
+    int year = startNode->getMovieInfo()->getYear();
+    Movie::Rating rating = startNode->getMovieInfo()->getRating();
+
+    output += name + " | ";
+    output += to_string(year) + " | ";
+    output += studio + " | ";
+    output += rating + " | ";
+    output += to_string(length) + " minutes\n";
+
+    return output;
+}
+
+const string OutputFormatter::formatMoviesAscendingByRating(MovieNode* startNode)
 {
 
 }
 
-const string formatMoviesAscendingByLength(MovieNode* startNode)
-{
-
-}
-
-const string formatMoviesDecendingByLength(MovieNode* startNode)
-{
-
-}
-
-const string formatMoviesAscendingByRating(MovieNode* startNode)
-{
-
-}
-
-const string formatMoviesDecendingByRating(MovieNode* startNode)
+const string OutputFormatter::formatMoviesDecendingByRating(MovieNode* startNode)
 {
 
 }

@@ -75,12 +75,32 @@ const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode
 
 const string OutputFormatter::formatMoviesAscendingByRating(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
+    string output;
 
+    if (startNode == 0)
+    {
+        return "";
+    }
+
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
+    output += this->formatMoviesAscendingByRating(startNode->getNextRating(), longestNameLength, longestStudioLength);
+
+    return output;
 }
 
 const string OutputFormatter::formatMoviesDecendingByRating(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
+    string output;
 
+    if (startNode == 0)
+    {
+        return "";
+    }
+
+    output += this->formatMoviesDecendingByRating(startNode->getNextRating(), longestNameLength, longestStudioLength);
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
+
+    return output;
 }
 
 const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode, int longestNameLength, int longestStudioLength)

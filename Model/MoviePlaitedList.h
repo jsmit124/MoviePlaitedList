@@ -38,6 +38,7 @@ class MoviePlaitedList
         int listSize;
         int longestNameLength;
         int longestStudioLength;
+        int longestRatingLength;
 
         void setNameHead(MovieNode*);
         void setLengthHead(MovieNode*);

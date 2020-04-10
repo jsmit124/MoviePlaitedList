@@ -55,7 +55,7 @@ void MoviePlaitedList::addMovieNode(Movie& movie)
 
     this->addMovieNodeByName(newMovieNode);
     this->addMovieNodeByLength(newMovieNode);
-    //this->addMovieNodeByRating(newMovieNode);
+    this->addMovieNodeByRating(newMovieNode);
 
     this->listSize++;
     if (movie.getName().size() > this->longestNameLength)
@@ -107,6 +107,7 @@ void MoviePlaitedList::addMovieNodeByName(MovieNode* newMovieNode)
 
 void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 {
+//TODO if length is the same, then add by alphabetically by name
     int movieNodeLength = newMovieNode->getMovieInfo()->getLength();
     MovieNode* currNodePtr = this->headLengthNode;
     int currLength = currNodePtr->getMovieInfo()->getLength();
@@ -143,13 +144,14 @@ void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 
 void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
 {
+//TODO if rating is the same, then add by alphabetically by name
     MovieRating movieNodeRating = newMovieNode->getMovieInfo()->getRating();
     MovieNode* currNodePtr = this->headRatingNode;
     MovieRating currRating = currNodePtr->getMovieInfo()->getRating();
 
     while (movieNodeRating > currRating)
     {
-        if (currNodePtr->getNextName() == 0)
+        if (currNodePtr->getNextRating() == 0)
         {
             break;
         }

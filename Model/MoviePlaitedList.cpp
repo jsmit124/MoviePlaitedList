@@ -109,29 +109,34 @@ void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 {
 //TODO if length is the same, then add by alphabetically by name
     int movieNodeLength = newMovieNode->getMovieInfo()->getLength();
+    string movieNodeName = newMovieNode->getMovieInfo()->getName();
+
     MovieNode* currNodePtr = this->headLengthNode;
     int currLength = currNodePtr->getMovieInfo()->getLength();
+    string currName = currNodePtr->getMovieInfo()->getName();
 
-    while (movieNodeLength > currLength)
+    while (movieNodeLength >= currLength)
     {
-        if (currNodePtr->getNextName() == 0)
+        if (currNodePtr->getNextLength() == 0)
         {
             break;
         }
 
-        bool comesBeforeNext = movieNodeLength < currNodePtr->getNextLength()->getMovieInfo()->getLength();
-        if (comesBeforeNext)
+        bool lengthIsLessThanNext = movieNodeLength < currNodePtr->getNextLength()->getMovieInfo()->getLength();
+        bool lengthIsEqualToNext = movieNodeLength == currNodePtr->getNextLength()->getMovieInfo()->getLength();
+        bool comesBeforeNextName = toUpperCase(movieNodeName).compare(toUpperCase(currNodePtr->getNextLength()->getMovieInfo()->getName())) < 0;
+        if (lengthIsLessThanNext || (lengthIsEqualToNext && comesBeforeNextName))
         {
             break;
         }
 
-        currNodePtr = currNodePtr->getNextName();
+        currNodePtr = currNodePtr->getNextLength();
         currLength = currNodePtr->getMovieInfo()->getLength();
     }
 
     if (currNodePtr == this->headLengthNode)
     {
-        if (movieNodeLength < currLength) //comes before header
+        if (movieNodeLength < currLength || (movieNodeLength == currLength && toUpperCase(movieNodeName).compare(toUpperCase(currName)) < 0))  //comes before header
         {
             this->setLengthHead(newMovieNode);
             return;

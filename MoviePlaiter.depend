@@ -114,7 +114,7 @@
 1586267389 /home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.h
 	"Movie.h"
 
-1586554319 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
+1586557507 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
@@ -125,7 +125,7 @@
 1586553671 /home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.h
 	"MovieNode.h"
 
-1586554883 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
+1586556865 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
 	"Controller.h"
 	"Formatter/OutputFormatter.h"
 

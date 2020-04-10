@@ -36,7 +36,7 @@ const string Controller::getFormattedOutput()
     int longestNameLength = this->movieList.getLongestNameLength();
     int longestStudioLength = this->movieList.getLongestStudioLength();
 
-    return this->formatter.formatMoviesDecendingByRating(this->movieList.getHeadRatingNode(), longestNameLength, longestStudioLength);
+    return this->formatter.formatMoviesDecendingByLength(this->movieList.getHeadLengthNode(), longestNameLength, longestStudioLength);
 }
 
 bool Controller::writeFile(string outFile)

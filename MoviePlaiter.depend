@@ -60,7 +60,7 @@
 1586383984 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
 	<string>
 
-1584559163 source:/home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.cpp
+1586545407 source:/home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.cpp
 	"Utils.h"
 	<algorithm>
 	<sstream>
@@ -142,19 +142,18 @@
 	"Movie.h"
 	<string>
 
-1586537368 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
+1586538586 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
 	"OutputFormatter.h"
 	"Utils.h"
 	<iostream>
 
-1586396199 /home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.h
+1586545407 /home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.h
 	"MovieNode.h"
-	"Movie.h"
+	"SaveFileFormatter.h"
 	<fstream>
 	<string>
-	<iostream>
 
-1586398346 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.cpp
+1586545215 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.cpp
 	"FileWriter.h"
 	"Utils.h"
 
@@ -167,4 +166,13 @@
 	"FileReader.h"
 	<iostream>
 	<sstream>
+
+1586545722 /home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.h
+	"Utils.h"
+	"Movie.h"
+	"MovieNode.h"
+	<string>
+
+1586545746 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.cpp
+	"SaveFileFormatter.h"
 

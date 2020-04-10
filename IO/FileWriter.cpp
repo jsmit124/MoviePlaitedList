@@ -12,15 +12,8 @@ FileWriter::FileWriter()
 
 bool FileWriter::write(MovieNode* startNode, string outFile)
 {
-    string output = "";
-    MovieNode* currNode = startNode;
-
-    while (currNode != 0)
-    {
-        Movie* currMovie = currNode->getMovieInfo();
-        output += currMovie->getName() + "," + currMovie->getStudio() + "," + to_string(currMovie->getYear()) + "," + ENUM_TO_STR(currMovie->getRating()) + "," + to_string(currMovie->getLength()) + "\n";
-        currNode = currNode->getNextName();
-    }
+    SaveFileFormatter formatter = SaveFileFormatter();
+    string output = formatter.formatMoviesForSave(startNode);
 
     ofstream file(outFile);
     if(file.is_open())
@@ -31,7 +24,6 @@ bool FileWriter::write(MovieNode* startNode, string outFile)
     }
     else
     {
-        cout << "Cannot open file" << endl;
         return false;
     }
 }

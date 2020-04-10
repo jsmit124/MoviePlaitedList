@@ -2,12 +2,13 @@
 #define FILEWRITER_H
 
 #include "MovieNode.h"
-#include "Movie.h"
 using namespace model;
+
+#include "SaveFileFormatter.h"
+using namespace formatter;
 
 #include <fstream>
 #include <string>
-#include <iostream>
 using namespace std;
 
 namespace io

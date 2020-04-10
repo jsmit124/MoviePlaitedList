@@ -42,5 +42,4 @@ int toInt(const string& text, const char* errorMessage)
     }
 
     return value;
-
 }

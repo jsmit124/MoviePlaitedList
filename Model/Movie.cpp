@@ -5,7 +5,7 @@ namespace model
 //
 // TODO: Document this
 //
-Movie::Movie(const string& name, const string& studio, int year, Rating rating, int length)
+Movie::Movie(const string& name, const string& studio, int year, MovieRating rating, int length)
 {
     this->name = name;
     this->studio = studio;
@@ -33,7 +33,7 @@ const string& Movie::getStudio() const
     return this->studio;
 }
 
-Movie::Rating Movie::getRating() const
+MovieRating Movie::getRating() const
 {
     return this->rating;
 }

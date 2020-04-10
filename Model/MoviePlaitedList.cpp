@@ -131,9 +131,9 @@ void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 
 void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
 {
-    Movie::Rating movieNodeRating = newMovieNode->getMovieInfo()->getRating();
+    MovieRating movieNodeRating = newMovieNode->getMovieInfo()->getRating();
     MovieNode* currNodePtr = this->headRatingNode;
-    Movie::Rating currRating = currNodePtr->getMovieInfo()->getRating();
+    MovieRating currRating = currNodePtr->getMovieInfo()->getRating();
 
     while (movieNodeRating > currRating)
     {

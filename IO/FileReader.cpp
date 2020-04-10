@@ -38,7 +38,27 @@ vector<Movie*> FileReader::read(const string& inFile)
                 string name = row[0];
                 string studio = row[1];
                 int year = stoi(row[2]);
-                Movie::Rating rating = Movie::Rating::R;
+                string ratingEntered = row[3];
+
+                MovieRating rating = MovieRating::NOT_RATED;
+
+                if (ratingEntered == ENUM_TO_STR(G))
+                {
+                    rating = MovieRating::G;
+                }
+                else if (ratingEntered == ENUM_TO_STR(PG))
+                {
+                    rating = MovieRating::PG;
+                }
+                else if (ratingEntered == ENUM_TO_STR(PG13))
+                {
+                    rating = MovieRating::PG13;
+                }
+                else if (ratingEntered == ENUM_TO_STR(R))
+                {
+                    rating = MovieRating::R;
+                }
+
                 int length = stoi(row[4]);
 
                 Movie* pMovie = new Movie(name, studio, year, rating, length);

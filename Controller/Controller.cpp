@@ -33,7 +33,7 @@ bool Controller::deleteFromMovieList(const string& movieName)
 
 const string Controller::getFormattedOutput()
 {
-    return this->formatter.formatMoviesDecendingByName(this->movieList.getHeadNameNode());
+    return this->formatter.formatMoviesDecendingByLength(this->movieList.getHeadLengthNode());
 }
 
 bool Controller::writeFile(string outFile)

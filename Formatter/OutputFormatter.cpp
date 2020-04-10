@@ -91,12 +91,14 @@ const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode)
     string studio = startNode->getMovieInfo()->getStudio();
     int length = startNode->getMovieInfo()->getLength();
     int year = startNode->getMovieInfo()->getYear();
-    Movie::Rating rating = startNode->getMovieInfo()->getRating();
+
+    MovieRating rating = startNode->getMovieInfo()->getRating();
+    string ratingValue = getRatingString(rating);
 
     output += name + "-";
     output += to_string(year) + " | ";
     output += studio + " | ";
-    output += rating + " | ";
+    output += ratingValue + " | ";
     output += to_string(length) + " minutes\n";
 
     return output;

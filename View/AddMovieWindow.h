@@ -6,6 +6,7 @@
 using namespace model;
 
 #include <Fl/Fl_Input.H>
+#include "MovieRating.h"
 
 namespace view
 {
@@ -24,7 +25,7 @@ private:
 
     Movie* pMovie;
 
-    Movie::Rating determineAndSetRatingBasedOnUserInput();
+    MovieRating determineAndSetRatingBasedOnUserInput();
     int determineAndSetYearBasedOnUserInput();
     int determineAndSetLengthBasedOnUserInput();
 

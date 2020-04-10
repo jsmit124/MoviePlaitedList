@@ -54,11 +54,12 @@
 	<string>
 	"Controller/Controller.h"
 
-1586383978 source:/home/justinsmith/Desktop/MoviePlaiter/Model/Movie.cpp
+1586546738 source:/home/justinsmith/Desktop/MoviePlaiter/Model/Movie.cpp
 	"Movie.h"
 
-1586383984 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
+1586546699 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
 	<string>
+	"MovieRating.h"
 
 1586545407 source:/home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.cpp
 	"Utils.h"
@@ -68,16 +69,17 @@
 1553005593 /home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.h
 	<string>
 
-1586273587 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
+1586546805 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
 	"AddMovieWindow.h"
 	"Utils.h"
 	<Fl/fl_ask.H>
 	<sstream>
 
-1584560854 /home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.h
+1586546785 /home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.h
 	"OKCancelWindow.h"
 	"Movie.h"
 	<Fl/Fl_Input.H>
+	"MovieRating.h"
 
 1584559154 /home/justinsmith/Desktop/MoviePlaiter/View/OKCancelWindow.h
 	<Fl/Fl_Window.H>
@@ -112,7 +114,7 @@
 1586267389 /home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.h
 	"Movie.h"
 
-1586536877 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
+1586546746 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
@@ -142,7 +144,7 @@
 	"Movie.h"
 	<string>
 
-1586538586 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
+1586546928 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
 	"OutputFormatter.h"
 	"Utils.h"
 	<iostream>
@@ -157,12 +159,13 @@
 	"FileWriter.h"
 	"Utils.h"
 
-1586403786 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
+1586547024 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
+	"MovieRating.h"
 	"Movie.h"
 	<vector>
 	<fstream>
 
-1586403776 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.cpp
+1586547150 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.cpp
 	"FileReader.h"
 	<iostream>
 	<sstream>
@@ -175,4 +178,11 @@
 
 1586545746 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.cpp
 	"SaveFileFormatter.h"
+
+1586547531 /home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.h
+	"Utils.h"
+	<string>
+
+1586547531 source:/home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.cpp
+	"MovieRating.h"
 

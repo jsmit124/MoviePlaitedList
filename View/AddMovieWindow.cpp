@@ -46,7 +46,7 @@ void AddMovieWindow::okHandler()
     string name = this->nameInput->value();
     string studio = this->studioInput->value();
 
-    Movie::Rating rating = this->determineAndSetRatingBasedOnUserInput();
+    MovieRating rating = this->determineAndSetRatingBasedOnUserInput();
 
     try
     {
@@ -62,28 +62,28 @@ void AddMovieWindow::okHandler()
 
 }
 
-Movie::Rating AddMovieWindow::determineAndSetRatingBasedOnUserInput()
+MovieRating AddMovieWindow::determineAndSetRatingBasedOnUserInput()
 {
     string ratingEntered = this->ratingInput->value();
     ratingEntered = toUpperCase(ratingEntered);
 
-    Movie::Rating rating = Movie::Rating::NOT_RATED;
+    MovieRating rating = MovieRating::NOT_RATED;
 
     if (ratingEntered == ENUM_TO_STR(G))
     {
-        rating = Movie::Rating::G;
+        rating = MovieRating::G;
     }
     else if (ratingEntered == ENUM_TO_STR(PG))
     {
-        rating = Movie::Rating::PG;
+        rating = MovieRating::PG;
     }
     else if (ratingEntered == ENUM_TO_STR(PG13))
     {
-        rating = Movie::Rating::PG13;
+        rating = MovieRating::PG13;
     }
     else if (ratingEntered == ENUM_TO_STR(R))
     {
-        rating = Movie::Rating::R;
+        rating = MovieRating::R;
     }
 
     return rating;

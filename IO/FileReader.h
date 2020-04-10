@@ -1,6 +1,8 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
 
+#include "MovieRating.h"
+
 #include "Movie.h"
 using namespace model;
 

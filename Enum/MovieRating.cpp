@@ -1,6 +1,6 @@
 #include "MovieRating.h"
 
-const string getRatingString(int index)
+const string GET_RATING_STRING(int index)
 {
     string rating = ENUM_TO_STR(NOT_RATED);
 

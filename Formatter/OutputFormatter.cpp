@@ -93,7 +93,7 @@ const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode)
     int year = startNode->getMovieInfo()->getYear();
 
     MovieRating rating = startNode->getMovieInfo()->getRating();
-    string ratingValue = getRatingString(rating);
+    string ratingValue = GET_RATING_STRING(rating);
 
     output += name + "-";
     output += to_string(year) + " | ";

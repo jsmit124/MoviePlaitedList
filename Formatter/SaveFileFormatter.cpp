@@ -10,13 +10,19 @@ SaveFileFormatter::SaveFileFormatter()
 
 const string SaveFileFormatter::formatMoviesForSave(MovieNode* startNode)
 {
-    string output = "";
+    string output;
+    string seperator = ",";
     MovieNode* currNode = startNode;
 
     while (currNode != 0)
     {
         Movie* currMovie = currNode->getMovieInfo();
-        output += currMovie->getName() + "," + currMovie->getStudio() + "," + to_string(currMovie->getYear()) + "," + ENUM_TO_STR(currMovie->getRating()) + "," + to_string(currMovie->getLength()) + "\n";
+        output += currMovie->getName() + seperator;
+        output += currMovie->getStudio() + seperator;
+        output += to_string(currMovie->getYear()) + seperator;
+        output += GET_RATING_STRING(currMovie->getRating()) + seperator;
+        output += to_string(currMovie->getLength()) + "\n";
+
         currNode = currNode->getNextName();
     }
 

@@ -2,6 +2,7 @@
 #define SAVEFILEFORMATTER_H
 
 #include "Utils.h"
+#include "MovieRating.h"
 
 #include "Movie.h"
 #include "MovieNode.h"

@@ -8,6 +8,6 @@ using namespace std;
 
 enum MovieRating {G, PG, PG13, R, NOT_RATED};
 
-const string getRatingString(int);
+const string GET_RATING_STRING(int);
 
 #endif // MOVIERATING_H

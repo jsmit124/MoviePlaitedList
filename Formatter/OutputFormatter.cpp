@@ -13,7 +13,7 @@ OutputFormatter::OutputFormatter()
     //ctor
 }
 
-const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
+const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
 
@@ -22,13 +22,13 @@ const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
         return "";
     }
 
-    output += this->formatMovieLineOutput(startNode);
-    output += this->formatMoviesAscendingByName(startNode->getNextName());
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
+    output += this->formatMoviesAscendingByName(startNode->getNextName(), longestNameLength, longestStudioLength);
 
     return output;
 }
 
-const string OutputFormatter::formatMoviesDecendingByName(MovieNode* startNode)
+const string OutputFormatter::formatMoviesDecendingByName(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
 
@@ -37,13 +37,13 @@ const string OutputFormatter::formatMoviesDecendingByName(MovieNode* startNode)
         return "";
     }
 
-    output += this->formatMoviesDecendingByName(startNode->getNextName());
-    output += this->formatMovieLineOutput(startNode);
+    output += this->formatMoviesDecendingByName(startNode->getNextName(), longestNameLength, longestStudioLength);
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
 
     return output;
 }
 
-const string OutputFormatter::formatMoviesAscendingByLength(MovieNode* startNode)
+const string OutputFormatter::formatMoviesAscendingByLength(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
 
@@ -52,13 +52,13 @@ const string OutputFormatter::formatMoviesAscendingByLength(MovieNode* startNode
         return "";
     }
 
-    output += this->formatMovieLineOutput(startNode);
-    output += this->formatMoviesAscendingByLength(startNode->getNextLength());
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
+    output += this->formatMoviesAscendingByLength(startNode->getNextLength(), longestNameLength, longestStudioLength);
 
     return output;
 }
 
-const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode)
+const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
 
@@ -67,23 +67,23 @@ const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode
         return "";
     }
 
-    output += this->formatMoviesDecendingByLength(startNode->getNextLength());
-    output += this->formatMovieLineOutput(startNode);
+    output += this->formatMoviesDecendingByLength(startNode->getNextLength(), longestNameLength, longestStudioLength);
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
 
     return output;
 }
 
-const string OutputFormatter::formatMoviesAscendingByRating(MovieNode* startNode)
+const string OutputFormatter::formatMoviesAscendingByRating(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
 
 }
 
-const string OutputFormatter::formatMoviesDecendingByRating(MovieNode* startNode)
+const string OutputFormatter::formatMoviesDecendingByRating(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
 
 }
 
-const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode)
+const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
 
@@ -95,11 +95,17 @@ const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode)
     MovieRating rating = startNode->getMovieInfo()->getRating();
     string ratingValue = GET_RATING_STRING(rating);
 
-    output += name + "-";
-    output += to_string(year) + " | ";
-    output += studio + " | ";
-    output += ratingValue + " | ";
-    output += to_string(length) + " minutes\n";
+    string nameAndYear = name + "-" + to_string(year);
+    nameAndYear.resize(longestNameLength + to_string(year).size() + 2, ' ');
+    output += nameAndYear;
+
+    studio.resize(longestStudioLength + 1, ' ');
+    output += studio;
+
+    ratingValue.resize(5, ' ');
+    output += ratingValue;
+
+    output += to_string(length) + "\n";
 
     return output;
 }

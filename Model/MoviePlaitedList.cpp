@@ -12,7 +12,7 @@ using namespace std;
 namespace model
 {
 
-MoviePlaitedList::MoviePlaitedList():headNameNode(0), headLengthNode(0), headRatingNode(0), listSize(0)
+MoviePlaitedList::MoviePlaitedList():headNameNode(0), headLengthNode(0), headRatingNode(0), listSize(0), longestNameLength(0), longestStudioLength(0)
 {}
 
 void MoviePlaitedList::makeNewList(Movie& movie)
@@ -24,7 +24,10 @@ void MoviePlaitedList::makeNewList(Movie& movie)
         this->headNameNode = newHead;
         this->headLengthNode = newHead;
         this->headRatingNode = newHead;
+
         this->listSize++;
+        this->longestNameLength = movie.getName().size();
+        this->longestStudioLength = movie.getStudio().size();
     }
 }
 
@@ -55,6 +58,15 @@ void MoviePlaitedList::addMovieNode(Movie& movie)
     //this->addMovieNodeByRating(newMovieNode);
 
     this->listSize++;
+    if (movie.getName().size() > this->longestNameLength)
+    {
+        this->longestNameLength = movie.getName().size();
+    }
+
+    if (movie.getStudio().size() > this->longestStudioLength)
+    {
+        this->longestStudioLength = movie.getStudio().size();
+    }
 }
 
 void MoviePlaitedList::addMovieNodeByName(MovieNode* newMovieNode)
@@ -205,6 +217,16 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
     }
 
     return false;
+}
+
+int MoviePlaitedList::getLongestNameLength()
+{
+    return this->longestNameLength;
+}
+
+int MoviePlaitedList::getLongestStudioLength()
+{
+    return this->longestStudioLength;
 }
 
 MovieNode* MoviePlaitedList::getHeadNameNode()

@@ -16,17 +16,17 @@ class OutputFormatter
         OutputFormatter();
         virtual ~OutputFormatter();
 
-        const string formatMoviesAscendingByName(MovieNode* startNode);
-        const string formatMoviesDecendingByName(MovieNode* startNode);
-        const string formatMoviesAscendingByLength(MovieNode* startNode);
-        const string formatMoviesDecendingByLength(MovieNode* startNode);
-        const string formatMoviesAscendingByRating(MovieNode* startNode);
-        const string formatMoviesDecendingByRating(MovieNode* startNode);
+        const string formatMoviesAscendingByName(MovieNode* startNode, int, int);
+        const string formatMoviesDecendingByName(MovieNode* startNode, int, int);
+        const string formatMoviesAscendingByLength(MovieNode* startNode, int, int);
+        const string formatMoviesDecendingByLength(MovieNode* startNode, int, int);
+        const string formatMoviesAscendingByRating(MovieNode* startNode, int, int);
+        const string formatMoviesDecendingByRating(MovieNode* startNode, int, int);
 
     protected:
 
     private:
-        const string formatMovieLineOutput(MovieNode* startNode);
+        const string formatMovieLineOutput(MovieNode* startNode, int, int);
 };
 
 }

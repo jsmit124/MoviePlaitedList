@@ -16,12 +16,16 @@ class MoviePlaitedList
         MovieNode* getHeadNameNode();
         MovieNode* getHeadLengthNode();
         MovieNode* getHeadRatingNode();
+
+        int getLongestNameLength();
+        int getLongestStudioLength();
         int getListSize();
 
         void addMovieNode(Movie& movie);
         void addMovieNodeByName(MovieNode*);
         void addMovieNodeByLength(MovieNode*);
         void addMovieNodeByRating(MovieNode*);
+
         bool deleteMovieNodeByName(const string&);
 
     protected:
@@ -32,6 +36,8 @@ class MoviePlaitedList
         MovieNode* headRatingNode;
 
         int listSize;
+        int longestNameLength;
+        int longestStudioLength;
 
         void setNameHead(MovieNode*);
         void setLengthHead(MovieNode*);

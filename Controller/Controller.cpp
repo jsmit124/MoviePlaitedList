@@ -33,7 +33,10 @@ bool Controller::deleteFromMovieList(const string& movieName)
 
 const string Controller::getFormattedOutput()
 {
-    return this->formatter.formatMoviesDecendingByLength(this->movieList.getHeadLengthNode());
+    int longestNameLength = this->movieList.getLongestNameLength();
+    int longestStudioLength = this->movieList.getLongestStudioLength();
+
+    return this->formatter.formatMoviesDecendingByLength(this->movieList.getHeadLengthNode(), longestNameLength, longestStudioLength);
 }
 
 bool Controller::writeFile(string outFile)

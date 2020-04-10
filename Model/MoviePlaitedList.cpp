@@ -107,7 +107,6 @@ void MoviePlaitedList::addMovieNodeByName(MovieNode* newMovieNode)
 
 void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 {
-//TODO if length is the same, then add by alphabetically by name
     int movieNodeLength = newMovieNode->getMovieInfo()->getLength();
     string movieNodeName = newMovieNode->getMovieInfo()->getName();
 
@@ -124,8 +123,8 @@ void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 
         bool lengthIsLessThanNext = movieNodeLength < currNodePtr->getNextLength()->getMovieInfo()->getLength();
         bool lengthIsEqualToNext = movieNodeLength == currNodePtr->getNextLength()->getMovieInfo()->getLength();
-        bool comesBeforeNextName = toUpperCase(movieNodeName).compare(toUpperCase(currNodePtr->getNextLength()->getMovieInfo()->getName())) < 0;
-        if (lengthIsLessThanNext || (lengthIsEqualToNext && comesBeforeNextName))
+        bool nameComesBeforeNext = toUpperCase(movieNodeName).compare(toUpperCase(currNodePtr->getNextLength()->getMovieInfo()->getName())) < 0;
+        if (lengthIsLessThanNext || (lengthIsEqualToNext && nameComesBeforeNext))
         {
             break;
         }
@@ -151,18 +150,23 @@ void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
 {
 //TODO if rating is the same, then add by alphabetically by name
     MovieRating movieNodeRating = newMovieNode->getMovieInfo()->getRating();
+    string movieNodeName = newMovieNode->getMovieInfo()->getName();
+
     MovieNode* currNodePtr = this->headRatingNode;
     MovieRating currRating = currNodePtr->getMovieInfo()->getRating();
+    string currName = currNodePtr->getMovieInfo()->getName();
 
-    while (movieNodeRating > currRating)
+    while (movieNodeRating >= currRating)
     {
         if (currNodePtr->getNextRating() == 0)
         {
             break;
         }
 
-        bool comesBeforeNext = movieNodeRating < currNodePtr->getNextRating()->getMovieInfo()->getRating();
-        if (comesBeforeNext)
+        bool ratingIsLessThanNext = movieNodeRating < currNodePtr->getNextRating()->getMovieInfo()->getRating();
+        bool ratingIsEqualToNext = movieNodeRating == currNodePtr->getNextRating()->getMovieInfo()->getRating();
+        bool nameComesBeforeNext = toUpperCase(movieNodeName).compare(toUpperCase(currNodePtr->getNextRating()->getMovieInfo()->getName())) < 0;
+        if (ratingIsLessThanNext || (ratingIsEqualToNext && nameComesBeforeNext))
         {
             break;
         }
@@ -173,7 +177,7 @@ void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
 
     if (currNodePtr == this->headRatingNode)
     {
-        if (movieNodeRating < currRating) //comes before header
+        if (movieNodeRating < currRating || movieNodeRating == currRating && toUpperCase(movieNodeName).compare(toUpperCase(currName)) < 0) //comes before header
         {
             this->setRatingHead(newMovieNode);
             return;

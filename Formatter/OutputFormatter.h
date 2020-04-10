@@ -26,6 +26,7 @@ class OutputFormatter
     protected:
 
     private:
+        const string formatMovieLineOutput(MovieNode* startNode);
 };
 
 }

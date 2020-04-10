@@ -22,18 +22,7 @@ const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
         return "";
     }
 
-    string name = startNode->getMovieInfo()->getName();
-    string studio = startNode->getMovieInfo()->getStudio();
-    int length = startNode->getMovieInfo()->getLength();
-    int year = startNode->getMovieInfo()->getYear();
-    Movie::Rating rating = startNode->getMovieInfo()->getRating();
-
-    output += name + " | ";
-    output += to_string(year) + " | ";
-    output += studio + " | ";
-    output += rating + " | ";
-    output += to_string(length) + " minutes\n";
-
+    output += this->formatMovieLineOutput(startNode);
     output += this->formatMoviesAscendingByName(startNode->getNextName());
 
     return output;
@@ -49,18 +38,7 @@ const string OutputFormatter::formatMoviesDecendingByName(MovieNode* startNode)
     }
 
     output += this->formatMoviesDecendingByName(startNode->getNextName());
-
-    string name = startNode->getMovieInfo()->getName();
-    string studio = startNode->getMovieInfo()->getStudio();
-    int length = startNode->getMovieInfo()->getLength();
-    int year = startNode->getMovieInfo()->getYear();
-    Movie::Rating rating = startNode->getMovieInfo()->getRating();
-
-    output += name + " | ";
-    output += to_string(year) + " | ";
-    output += studio + " | ";
-    output += rating + " | ";
-    output += to_string(length) + " minutes\n";
+    output += this->formatMovieLineOutput(startNode);
 
     return output;
 }
@@ -74,18 +52,7 @@ const string OutputFormatter::formatMoviesAscendingByLength(MovieNode* startNode
         return "";
     }
 
-    string name = startNode->getMovieInfo()->getName();
-    string studio = startNode->getMovieInfo()->getStudio();
-    int length = startNode->getMovieInfo()->getLength();
-    int year = startNode->getMovieInfo()->getYear();
-    Movie::Rating rating = startNode->getMovieInfo()->getRating();
-
-    output += name + " | ";
-    output += to_string(year) + " | ";
-    output += studio + " | ";
-    output += rating + " | ";
-    output += to_string(length) + " minutes\n";
-
+    output += this->formatMovieLineOutput(startNode);
     output += this->formatMoviesAscendingByLength(startNode->getNextLength());
 
     return output;
@@ -101,18 +68,7 @@ const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode
     }
 
     output += this->formatMoviesDecendingByLength(startNode->getNextLength());
-
-    string name = startNode->getMovieInfo()->getName();
-    string studio = startNode->getMovieInfo()->getStudio();
-    int length = startNode->getMovieInfo()->getLength();
-    int year = startNode->getMovieInfo()->getYear();
-    Movie::Rating rating = startNode->getMovieInfo()->getRating();
-
-    output += name + " | ";
-    output += to_string(year) + " | ";
-    output += studio + " | ";
-    output += rating + " | ";
-    output += to_string(length) + " minutes\n";
+    output += this->formatMovieLineOutput(startNode);
 
     return output;
 }
@@ -125,6 +81,25 @@ const string OutputFormatter::formatMoviesAscendingByRating(MovieNode* startNode
 const string OutputFormatter::formatMoviesDecendingByRating(MovieNode* startNode)
 {
 
+}
+
+const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode)
+{
+    string output;
+
+    string name = startNode->getMovieInfo()->getName();
+    string studio = startNode->getMovieInfo()->getStudio();
+    int length = startNode->getMovieInfo()->getLength();
+    int year = startNode->getMovieInfo()->getYear();
+    Movie::Rating rating = startNode->getMovieInfo()->getRating();
+
+    output += name + "-";
+    output += to_string(year) + " | ";
+    output += studio + " | ";
+    output += rating + " | ";
+    output += to_string(length) + " minutes\n";
+
+    return output;
 }
 
 OutputFormatter::~OutputFormatter()

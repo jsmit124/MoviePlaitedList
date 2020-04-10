@@ -12,14 +12,17 @@ class MoviePlaitedList
         MoviePlaitedList();
         virtual ~MoviePlaitedList();
 
-        void addToHead(Movie&);
+        void makeNewList(Movie&);
         MovieNode* getHeadNameNode();
         MovieNode* getHeadLengthNode();
         MovieNode* getHeadRatingNode();
         int getListSize();
 
-        void addMovieNodeByName(Movie& movie);
-        bool deleteMovieNodeByName(const string& movieName);
+        void addMovieNode(Movie& movie);
+        void addMovieNodeByName(MovieNode*);
+        void addMovieNodeByLength(MovieNode*);
+        void addMovieNodeByRating(MovieNode*);
+        bool deleteMovieNodeByName(const string&);
 
     protected:
 
@@ -30,8 +33,9 @@ class MoviePlaitedList
 
         int listSize;
 
-        void setNameHead(MovieNode* movie);
-        MovieNode* peek(MovieNode* node);
+        void setNameHead(MovieNode*);
+        void setLengthHead(MovieNode*);
+        void setRatingHead(MovieNode*);
 };
 
 }

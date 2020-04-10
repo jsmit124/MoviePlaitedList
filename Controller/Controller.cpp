@@ -18,11 +18,11 @@ void Controller::addToMovieList(Movie movie)
 {
     if (this->movieList.getListSize() == 0)
     {
-        this->movieList.addToHead(movie);
+        this->movieList.makeNewList(movie);
     }
     else
     {
-        this->movieList.addMovieNodeByName(movie);
+        this->movieList.addMovieNode(movie);
     }
 }
 

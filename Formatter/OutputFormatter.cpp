@@ -15,6 +15,7 @@ OutputFormatter::OutputFormatter()
 
 const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
 {
+//TODO make this recursive
     string output = "";
     MovieNode* currNodePtr = startNode;
 
@@ -41,6 +42,31 @@ const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode)
     }
 
     return output;
+}
+
+const string formatMoviesDecendingByName(MovieNode* startNode);
+{
+
+}
+
+const string formatMoviesAscendingByLength(MovieNode* startNode)
+{
+
+}
+
+const string formatMoviesDecendingByLength(MovieNode* startNode)
+{
+
+}
+
+const string formatMoviesAscendingByRating(MovieNode* startNode)
+{
+
+}
+
+const string formatMoviesDecendingByRating(MovieNode* startNode)
+{
+
 }
 
 OutputFormatter::~OutputFormatter()

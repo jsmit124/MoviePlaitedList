@@ -58,9 +58,9 @@
 1586546738 source:/home/justinsmith/Desktop/MoviePlaiter/Model/Movie.cpp
 	"Movie.h"
 
-1586546699 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
+1586569464 /home/justinsmith/Desktop/MoviePlaiter/Model/Movie.h
 	<string>
-	"MovieRating.h"
+	"Enum/MovieRating.h"
 
 1586545407 source:/home/justinsmith/Desktop/MoviePlaiter/Utils/Utils.cpp
 	"Utils.h"
@@ -95,7 +95,7 @@
 	<Fl/Fl_Input.H>
 	<string>
 
-1586407292 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
+1586567883 source:/home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.cpp
 	"MovieLibraryWindow.h"
 	"DeleteMovieWindow.h"
 	"AddMovieWindow.h"
@@ -115,7 +115,7 @@
 1586267389 /home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.h
 	"Movie.h"
 
-1586558395 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
+1586569621 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.cpp
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
@@ -130,8 +130,8 @@
 	"Controller.h"
 	"Formatter/OutputFormatter.h"
 
-1586567338 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
-	"SortOrder.h"
+1586569473 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
+	"Enum/SortOrder.h"
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
@@ -151,7 +151,7 @@
 	"Utils.h"
 	<iostream>
 
-1586545407 /home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.h
+1586569669 /home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.h
 	"MovieNode.h"
 	"SaveFileFormatter.h"
 	<fstream>
@@ -161,8 +161,8 @@
 	"FileWriter.h"
 	"Utils.h"
 
-1586547024 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
-	"MovieRating.h"
+1586569479 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
+	"Enum/MovieRating.h"
 	"Movie.h"
 	<vector>
 	<fstream>
@@ -172,7 +172,7 @@
 	<iostream>
 	<sstream>
 
-1586547969 /home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.h
+1586569766 /home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.h
 	"Utils.h"
 	"MovieRating.h"
 	"Movie.h"

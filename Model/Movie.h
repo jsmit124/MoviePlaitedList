@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-#include "MovieRating.h"
+#include "Enum/MovieRating.h"
 
 namespace model
 {

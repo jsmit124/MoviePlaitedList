@@ -204,21 +204,37 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
             MovieNode* oldNextLength = currNodePtr->getNextLength();
             MovieNode* oldNextRating = currNodePtr->getNextRating();
 
-            currNodePtr->setNextName(0);
-            currNodePtr->setNextLength(0);
-            currNodePtr->setNextRating(0);
-            delete currNodePtr;
-
-            if (prevNodePtr == 0)
+            if (currNodePtr == this->headNameNode)
             {
                 this->headNameNode = oldNextName;
             }
             else
             {
                 prevNodePtr->setNextName(oldNextName);
-                prevNodePtr->setNextLength(oldNextLength);
-                prevNodePtr->setNextRating(oldNextRating);
             }
+
+            if (currNodePtr == this->headLengthNode)
+            {
+                this->headLengthNode = oldNextLength;
+            }
+            else
+            {
+                prevNodePtr->setNextLength(oldNextLength); //does not work
+            }
+
+            if (currNodePtr == this->headRatingNode)
+            {
+                this->headRatingNode = oldNextRating;
+            }
+            else
+            {
+                prevNodePtr->setNextRating(oldNextRating); // does not work
+            }
+
+            currNodePtr->setNextName(0);
+            currNodePtr->setNextLength(0);
+            currNodePtr->setNextRating(0);
+            delete currNodePtr;
 
             return true;
         }

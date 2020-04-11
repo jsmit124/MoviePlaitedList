@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include "SortOrder.h"
+#include "Enum/SortOrder.h"
 
 #include "MoviePlaitedList.h"
 #include "MovieNode.h"

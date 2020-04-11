@@ -19,6 +19,9 @@
 					<Add directory="Model" />
 					<Add directory="Utils" />
 					<Add directory="IO" />
+					<Add directory="Controller" />
+					<Add directory="Formatter" />
+					<Add directory="Enum" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -31,8 +34,14 @@
 		</Linker>
 		<Unit filename="Controller/Controller.cpp" />
 		<Unit filename="Controller/Controller.h" />
+		<Unit filename="Enum/MovieRating.cpp" />
+		<Unit filename="Enum/MovieRating.h" />
+		<Unit filename="Enum/SortOrder.cpp" />
+		<Unit filename="Enum/SortOrder.h" />
 		<Unit filename="Formatter/OutputFormatter.cpp" />
 		<Unit filename="Formatter/OutputFormatter.h" />
+		<Unit filename="Formatter/SaveFileFormatter.cpp" />
+		<Unit filename="Formatter/SaveFileFormatter.h" />
 		<Unit filename="IO/FileReader.cpp" />
 		<Unit filename="IO/FileReader.h" />
 		<Unit filename="IO/FileWriter.cpp" />

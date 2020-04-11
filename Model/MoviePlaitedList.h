@@ -26,7 +26,10 @@ class MoviePlaitedList
         void addMovieNodeByLength(MovieNode*);
         void addMovieNodeByRating(MovieNode*);
 
+        bool deleteMovieNode(const string&);
         bool deleteMovieNodeByName(const string&);
+        bool deleteMovieNodeByLength(const string&);
+        bool deleteMovieNodeByRating(const string&);
 
     protected:
 

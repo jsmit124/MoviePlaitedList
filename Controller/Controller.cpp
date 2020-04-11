@@ -28,7 +28,7 @@ void Controller::addToMovieList(Movie movie)
 
 bool Controller::deleteFromMovieList(const string& movieName)
 {
-    return this->movieList.deleteMovieNodeByName(movieName);
+    return this->movieList.deleteMovieNode(movieName);
 }
 
 const string Controller::getFormattedOutput(SortOrder order)

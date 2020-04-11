@@ -188,6 +188,25 @@ void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
     currNodePtr->setNextRating(newMovieNode);
 }
 
+bool MoviePlaitedList::deleteMovieNode(const string& movieName)
+{
+    bool deletedLengthNode, deletedRatingNode;
+    bool movieFound = this->deleteMovieNodeByName(movieName);
+
+    if (movieFound)
+    {
+        deletedLengthNode = this->deleteMovieNodeByLength(movieName);
+        deletedRatingNode = this->deleteMovieNodeByRating(movieName);
+    }
+
+    if (deletedLengthNode && deletedRatingNode)
+    {
+        return true;
+    }
+
+    return false;
+}
+
 bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
 {
     MovieNode* prevNodePtr = 0;
@@ -201,8 +220,6 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
         if (toUpperCase(currName) == toUpperCase(movieName))
         {
             MovieNode* oldNextName = currNodePtr->getNextName();
-            MovieNode* oldNextLength = currNodePtr->getNextLength();
-            MovieNode* oldNextRating = currNodePtr->getNextRating();
 
             if (currNodePtr == this->headNameNode)
             {
@@ -213,14 +230,64 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
                 prevNodePtr->setNextName(oldNextName);
             }
 
+            currNodePtr->setNextName(0);
+            return true;
+        }
+
+        prevNodePtr = currNodePtr;
+        currNodePtr = currNodePtr->getNextName();
+    }
+
+    return false;
+}
+
+bool MoviePlaitedList::deleteMovieNodeByLength(const string& movieName)
+{
+    MovieNode* prevNodePtr = 0;
+    MovieNode* currNodePtr = this->headLengthNode;
+    string currName;
+
+    while (currNodePtr != 0)
+    {
+        currName = currNodePtr->getMovieInfo()->getName();
+
+        if (toUpperCase(currName) == toUpperCase(movieName))
+        {
+            MovieNode* oldNextLength = currNodePtr->getNextLength();
+
             if (currNodePtr == this->headLengthNode)
             {
                 this->headLengthNode = oldNextLength;
             }
             else
             {
-                prevNodePtr->setNextLength(oldNextLength); //does not work
+                prevNodePtr->setNextLength(oldNextLength);
             }
+
+            currNodePtr->setNextLength(0);
+            return true;
+        }
+
+        prevNodePtr = currNodePtr;
+        currNodePtr = currNodePtr->getNextLength();
+    }
+
+    return false;
+}
+
+bool MoviePlaitedList::deleteMovieNodeByRating(const string& movieName)
+{
+    MovieNode* prevNodePtr = 0;
+    MovieNode* currNodePtr = this->headRatingNode;
+    string currName;
+
+    while (currNodePtr != 0)
+    {
+        currName = currNodePtr->getMovieInfo()->getName();
+
+        if (toUpperCase(currName) == toUpperCase(movieName))
+        {
+            MovieNode* oldNextRating = currNodePtr->getNextRating();
 
             if (currNodePtr == this->headRatingNode)
             {
@@ -228,19 +295,15 @@ bool MoviePlaitedList::deleteMovieNodeByName(const string& movieName)
             }
             else
             {
-                prevNodePtr->setNextRating(oldNextRating); // does not work
+                prevNodePtr->setNextRating(oldNextRating);
             }
-
-            currNodePtr->setNextName(0);
-            currNodePtr->setNextLength(0);
+;
             currNodePtr->setNextRating(0);
-            delete currNodePtr;
-
             return true;
         }
 
         prevNodePtr = currNodePtr;
-        currNodePtr = currNodePtr->getNextName();
+        currNodePtr = currNodePtr->getNextRating();
     }
 
     return false;

@@ -41,7 +41,7 @@
 1586215267 source:/home/justinsmith/Desktop/MoviePlaiter/main.cpp
 	"MovieLibraryWindow.h"
 
-1586378293 /home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.h
+1586567246 /home/justinsmith/Desktop/MoviePlaiter/View/MovieLibraryWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -50,6 +50,7 @@
 	<FL/Fl_Text_Buffer.H>
 	<FL/Fl_Text_Display.H>
 	<FL/Fl_Button.H>
+	"SortOrder.h"
 	<vector>
 	<string>
 	"Controller/Controller.h"
@@ -125,11 +126,12 @@
 1586553671 /home/justinsmith/Desktop/MoviePlaiter/Model/MoviePlaitedList.h
 	"MovieNode.h"
 
-1586558414 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
+1586567683 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
 	"Controller.h"
 	"Formatter/OutputFormatter.h"
 
-1586407385 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
+1586567338 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
+	"SortOrder.h"
 	"MoviePlaitedList.h"
 	"MovieNode.h"
 	"Movie.h"
@@ -186,4 +188,9 @@
 
 1586548075 source:/home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.cpp
 	"MovieRating.h"
+
+1586567066 source:/home/justinsmith/Desktop/MoviePlaiter/Enum/SortOrder.cpp
+	"SortOrder.h"
+
+1586567094 /home/justinsmith/Desktop/MoviePlaiter/Enum/SortOrder.h
 

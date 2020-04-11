@@ -11,6 +11,8 @@
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Button.H>
 
+#include "SortOrder.h"
+
 #include <vector>
 #include <string>
 using namespace std;
@@ -26,11 +28,25 @@ namespace view
 //
 class MovieLibraryWindow : public Fl_Window
 {
+
 public:
-    //
-    // Defines the sorting methods that can be used to sort the methods.
-    //
-    enum SortOrder {NAME_ASCENDING, NAME_DESCENDING, RATING_ASCENDING, RATING_DESCENDING, LENGTH_ASCENDING, LENGTH_DESCENDING};
+    MovieLibraryWindow(int width, int height, const char* title);
+    virtual ~MovieLibraryWindow();
+
+    static void cbSortingMethodChanged(Fl_Widget* widget, void* data);
+    void sortingMethodChanged();
+
+    static void cbLoad(Fl_Widget* widget, void* data);
+    static void cbSave(Fl_Widget* widget, void* data);
+    const string promptUserForFilename(int type, const string& title);
+    const string getFilename() const;
+
+    static void cbAddMovie(Fl_Widget* widget, void* data);
+    static void cbDeleteMovie(Fl_Widget* widget, void* data);
+
+    SortOrder getSortOrder() const;
+
+    void setSummaryText(const string& outputText);
 
 private:
     static const int SORTING_GROUPS = 3;
@@ -64,25 +80,6 @@ private:
     void setSortOrderBasedOnSelection();
 
     void draw();
-
-public:
-    MovieLibraryWindow(int width, int height, const char* title);
-    virtual ~MovieLibraryWindow();
-
-    static void cbSortingMethodChanged(Fl_Widget* widget, void* data);
-    void sortingMethodChanged();
-
-    static void cbLoad(Fl_Widget* widget, void* data);
-    static void cbSave(Fl_Widget* widget, void* data);
-    const string promptUserForFilename(int type, const string& title);
-    const string getFilename() const;
-
-    static void cbAddMovie(Fl_Widget* widget, void* data);
-    static void cbDeleteMovie(Fl_Widget* widget, void* data);
-
-    MovieLibraryWindow::SortOrder getSortOrder() const;
-
-    void setSummaryText(const string& outputText);
 };
 
 }

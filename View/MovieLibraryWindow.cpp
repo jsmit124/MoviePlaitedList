@@ -131,6 +131,7 @@ void MovieLibraryWindow::cbSortingMethodChanged(Fl_Widget* widget, void* data)
 void MovieLibraryWindow::sortingMethodChanged()
 {
     this->setSortOrderBasedOnSelection();
+    this->setSummaryText(this->controller.getFormattedOutput(this->sortOrderSelection));
 }
 
 //
@@ -154,7 +155,7 @@ void MovieLibraryWindow::cbLoad(Fl_Widget* widget, void* data)
     }
     else
     {
-        window->setSummaryText(window->controller.getFormattedOutput());
+        window->setSummaryText(window->controller.getFormattedOutput(window->sortOrderSelection));
     }
 
 }
@@ -228,7 +229,6 @@ void MovieLibraryWindow::cbSave(Fl_Widget* widget, void* data)
     {
         window->setSummaryText("File saved.");
     }
-
 }
 
 //
@@ -256,9 +256,8 @@ void MovieLibraryWindow::cbAddMovie(Fl_Widget* widget, void* data)
     {
         auto pMovie = addMovie.getMovie();
         window->controller.addToMovieList(*pMovie);
-        window->setSummaryText(window->controller.getFormattedOutput());
+        window->setSummaryText(window->controller.getFormattedOutput(window->sortOrderSelection));
     }
-
 }
 
 //
@@ -286,13 +285,12 @@ void MovieLibraryWindow::cbDeleteMovie(Fl_Widget* widget, void* data)
     bool movieRemoved = window->controller.deleteFromMovieList(deleteMovie.getName());
     if (movieRemoved)
     {
-        window->setSummaryText(window->controller.getFormattedOutput());
+        window->setSummaryText(window->controller.getFormattedOutput(window->sortOrderSelection));
     }
     else
     {
         window->setSummaryText("Remove could not be completed.\nMovie was not found or operation was cancelled.\nPlease try again.");
     }
-
 }
 
 //
@@ -333,7 +331,7 @@ void MovieLibraryWindow::setSummaryText(const string& outputText)
 //
 // @return The sort order the user has selected
 //
-MovieLibraryWindow::SortOrder MovieLibraryWindow::getSortOrder() const {
+SortOrder MovieLibraryWindow::getSortOrder() const {
     return this->sortOrderSelection;
 }
 

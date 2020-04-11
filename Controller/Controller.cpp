@@ -31,17 +31,43 @@ bool Controller::deleteFromMovieList(const string& movieName)
     return this->movieList.deleteMovieNodeByName(movieName);
 }
 
-const string Controller::getFormattedOutput()
+const string Controller::getFormattedOutput(SortOrder order)
 {
     int longestNameLength = this->movieList.getLongestNameLength();
     int longestStudioLength = this->movieList.getLongestStudioLength();
 
-    return this->formatter.formatMoviesDecendingByRating(this->movieList.getHeadRatingNode(), longestNameLength, longestStudioLength);
+    string output;
+
+    if (order == SortOrder::LENGTH_ASCENDING)
+    {
+        output = formatter.formatMoviesAscendingByLength(this->movieList.getHeadLengthNode(), longestNameLength, longestStudioLength);
+    }
+    else if (order == SortOrder::LENGTH_DESCENDING)
+    {
+        output = formatter.formatMoviesDecendingByLength(this->movieList.getHeadLengthNode(), longestNameLength, longestStudioLength);
+    }
+    else if (order == SortOrder::RATING_ASCENDING)
+    {
+        output = formatter.formatMoviesAscendingByRating(this->movieList.getHeadRatingNode(), longestNameLength, longestStudioLength);
+    }
+    else if (order == SortOrder::RATING_DESCENDING)
+    {
+        output = formatter.formatMoviesDecendingByRating(this->movieList.getHeadRatingNode(), longestNameLength, longestStudioLength);
+    }
+    else if (order == SortOrder::NAME_DESCENDING)
+    {
+        output = formatter.formatMoviesDecendingByName(this->movieList.getHeadNameNode(), longestNameLength, longestStudioLength);
+    }
+    else
+    {
+        output = formatter.formatMoviesAscendingByName(this->movieList.getHeadNameNode(), longestNameLength, longestStudioLength);
+    }
+
+    return output;
 }
 
 bool Controller::writeFile(string outFile)
 {
-
     return this->fileWriter.write(this->movieList.getHeadNameNode(), outFile);
 }
 

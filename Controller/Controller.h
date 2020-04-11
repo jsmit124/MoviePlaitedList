@@ -1,6 +1,8 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
+#include "SortOrder.h"
+
 #include "MoviePlaitedList.h"
 #include "MovieNode.h"
 #include "Movie.h"
@@ -27,7 +29,7 @@ class Controller
 
         void addToMovieList(Movie movie);
         bool deleteFromMovieList(const string& movieName);
-        const string getFormattedOutput();
+        const string getFormattedOutput(SortOrder);
         bool writeFile(string outFile);
         bool readFile(string inFile);
 

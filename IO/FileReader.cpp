@@ -1,9 +1,5 @@
 #include "FileReader.h"
 
-#include <iostream>
-#include <sstream>
-using namespace std;
-
 namespace io
 {
 
@@ -27,7 +23,6 @@ vector<Movie*> FileReader::read(const string& inFile)
         {
             row.clear();
 
-            cout << line << endl;
             stringstream stringStream(line);
             while (getline(stringStream, entry, ','))
             {

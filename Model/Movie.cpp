@@ -2,9 +2,7 @@
 
 namespace model
 {
-//
-// TODO: Document this
-//
+
 Movie::Movie(const string& name, const string& studio, int year, MovieRating rating, int length)
 {
     this->name = name;

@@ -1,8 +1,5 @@
 #include "Controller.h"
 
-#include "Formatter/OutputFormatter.h"
-using namespace formatter;
-
 namespace controller
 {
 

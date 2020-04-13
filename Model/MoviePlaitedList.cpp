@@ -1,14 +1,5 @@
 #include "MoviePlaitedList.h"
 
-#include "MovieNode.h"
-#include "Movie.h"
-
-#include "Utils.h"
-
-#include <string>
-#include <iostream>
-using namespace std;
-
 namespace model
 {
 
@@ -148,7 +139,6 @@ void MoviePlaitedList::addMovieNodeByLength(MovieNode* newMovieNode)
 
 void MoviePlaitedList::addMovieNodeByRating(MovieNode* newMovieNode)
 {
-//TODO if rating is the same, then add by alphabetically by name
     MovieRating movieNodeRating = newMovieNode->getMovieInfo()->getRating();
     string movieNodeName = newMovieNode->getMovieInfo()->getName();
 
@@ -297,7 +287,7 @@ bool MoviePlaitedList::deleteMovieNodeByRating(const string& movieName)
             {
                 prevNodePtr->setNextRating(oldNextRating);
             }
-;
+            ;
             currNodePtr->setNextRating(0);
             return true;
         }

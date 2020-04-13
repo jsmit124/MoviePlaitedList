@@ -1,12 +1,8 @@
 #include "MovieNode.h"
-#include "Movie.h"
 
-using namespace std;
+namespace model
+{
 
-namespace model {
-//
-// TODO: Document this
-//
 MovieNode::MovieNode(Movie movie):nextName(0), nextLength(0), nextRating(0)
 {
     this->movieInfo = new Movie(movie);

@@ -1,7 +1,5 @@
 #include "FileWriter.h"
 
-#include "Utils.h"
-
 namespace io
 {
 

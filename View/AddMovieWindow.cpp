@@ -1,20 +1,8 @@
 #include "AddMovieWindow.h"
 
-#include "Utils.h"
-
-#include <Fl/fl_ask.H>
-#include <sstream>
-using namespace std;
-
 namespace view
 {
 
-//
-// Constructs an add movie window creating and initializing all the widgets that will be displayed
-//
-// @precondition none
-// @postcondition none
-//
 AddMovieWindow::AddMovieWindow() : OKCancelWindow(330, 215, "Movie to add")
 {
     const int X_INPUT_LOCATION = 110;
@@ -35,12 +23,6 @@ AddMovieWindow::AddMovieWindow() : OKCancelWindow(330, 215, "Movie to add")
     end();
 }
 
-//
-// The instance handler when OK is invoked
-//
-// @precondition none
-// @postcondition getMovie() == movie object created from data user entered
-//
 void AddMovieWindow::okHandler()
 {
     string name = this->nameInput->value();
@@ -116,12 +98,6 @@ int AddMovieWindow::determineAndSetLengthBasedOnUserInput()
     return length;
 }
 
-//
-// The instance handler when cancel is invoked
-//
-// @precondition none
-// @postcondition getMovie() == 0
-//
 void AddMovieWindow::cancelHandler()
 {
     if (this->pMovie)
@@ -133,22 +109,11 @@ void AddMovieWindow::cancelHandler()
     this->hide();
 }
 
-//
-// Gets the new movie object based on what user entered
-//
-// @precondition none
-// @postcondition none
-//
-// @return The movie object
-//
 Movie* AddMovieWindow::getMovie() const
 {
     return this->pMovie;
 }
 
-//
-// Destructor that cleans up all allocated resources for the window
-//
 AddMovieWindow::~AddMovieWindow()
 {
     delete this->nameInput;

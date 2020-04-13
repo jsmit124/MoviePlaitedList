@@ -28,10 +28,10 @@ void AddMovieWindow::okHandler()
     string name = this->nameInput->value();
     string studio = this->studioInput->value();
 
-    MovieRating rating = this->determineAndSetRatingBasedOnUserInput();
 
     try
     {
+        MovieRating rating = this->determineAndSetRatingBasedOnUserInput();
         int year = this->determineAndSetYearBasedOnUserInput();
         int length = this->determineAndSetLengthBasedOnUserInput();
         this->pMovie = new Movie(name, studio, year, rating, length);
@@ -48,24 +48,11 @@ MovieRating AddMovieWindow::determineAndSetRatingBasedOnUserInput()
 {
     string ratingEntered = this->ratingInput->value();
     ratingEntered = toUpperCase(ratingEntered);
+    MovieRating rating = GET_RATING_FROM_STRING(ratingEntered);
 
-    MovieRating rating = MovieRating::NOT_RATED;
-
-    if (ratingEntered == ENUM_TO_STR(G))
+    if (rating == MovieRating::NOT_RATED)
     {
-        rating = MovieRating::G;
-    }
-    else if (ratingEntered == ENUM_TO_STR(PG))
-    {
-        rating = MovieRating::PG;
-    }
-    else if (ratingEntered == ENUM_TO_STR(PG13))
-    {
-        rating = MovieRating::PG13;
-    }
-    else if (ratingEntered == ENUM_TO_STR(R))
-    {
-        rating = MovieRating::R;
+        throw "Please enter a valid rating value - G, PG, PG13, R";
     }
 
     return rating;

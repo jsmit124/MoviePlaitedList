@@ -38,7 +38,7 @@ public:
     *       The path to the file to read from
     *
     * @return output
-    *       The vector of movie objects found in the file.0
+    *       The vector of movie objects found in the file.
     */
     vector<Movie*> read(const string& inFile);
 

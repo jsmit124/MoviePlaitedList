@@ -70,7 +70,8 @@ const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode
     }
 
     output += this->formatMoviesDecendingByLength(startNode->getNextLength(), longestNameLength, longestStudioLength);
-    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);\
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
+    \
     return output;
 }
 

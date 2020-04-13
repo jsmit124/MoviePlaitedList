@@ -54,6 +54,11 @@ vector<Movie*> FileReader::read(const string& inFile)
                     rating = MovieRating::R;
                 }
 
+                if (rating == MovieRating::NOT_RATED)
+                {
+                    continue;
+                }
+
                 int length = stoi(row[4]);
 
                 Movie* pMovie = new Movie(name, studio, year, rating, length);

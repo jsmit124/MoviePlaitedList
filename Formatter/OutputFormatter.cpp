@@ -113,7 +113,7 @@ const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode, int lo
     int year = startNode->getMovieInfo()->getYear();
 
     MovieRating rating = startNode->getMovieInfo()->getRating();
-    string ratingValue = GET_RATING_STRING(rating);
+    string ratingValue = GET_RATING_FROM_INT(rating);
 
     string nameAndYear = name + "-" + to_string(year);
     nameAndYear.resize(longestNameLength + to_string(year).size() + 2, ' ');

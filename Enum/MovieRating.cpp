@@ -1,6 +1,6 @@
 #include "MovieRating.h"
 
-const string GET_RATING_STRING(int index)
+const string GET_RATING_FROM_INT(int index)
 {
     string rating = ENUM_TO_STR(NOT_RATED);
 
@@ -22,4 +22,29 @@ const string GET_RATING_STRING(int index)
     }
 
     return rating;
+}
+
+MovieRating GET_RATING_FROM_STRING(const string& ratingEntered)
+{
+    MovieRating rating = MovieRating::NOT_RATED;
+
+    if (ratingEntered == ENUM_TO_STR(G))
+    {
+        rating = MovieRating::G;
+    }
+    else if (ratingEntered == ENUM_TO_STR(PG))
+    {
+        rating = MovieRating::PG;
+    }
+    else if (ratingEntered == ENUM_TO_STR(PG13))
+    {
+        rating = MovieRating::PG13;
+    }
+    else if (ratingEntered == ENUM_TO_STR(R))
+    {
+        rating = MovieRating::R;
+    }
+
+    return rating;
+
 }

@@ -20,7 +20,7 @@ const string SaveFileFormatter::formatMoviesForSave(MovieNode* startNode)
         output += currMovie->getName() + seperator;
         output += currMovie->getStudio() + seperator;
         output += to_string(currMovie->getYear()) + seperator;
-        output += GET_RATING_STRING(currMovie->getRating()) + seperator;
+        output += GET_RATING_FROM_INT(currMovie->getRating()) + seperator;
         output += to_string(currMovie->getLength()) + "\n";
 
         currNode = currNode->getNextName();

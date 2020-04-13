@@ -30,39 +30,18 @@ vector<Movie*> FileReader::read(const string& inFile)
             }
             try
             {
-                string name = row[0];
-                string studio = row[1];
-                int year = stoi(row[2]);
-                string ratingEntered = row[3];
+                string name = row[NAME_INDEX];
+                string studio = row[STUDIO_INDEX];
+                int year = stoi(row[YEAR_INDEX]);
+                string ratingEntered = row[RATING_INDEX];
+                MovieRating rating = GET_RATING_FROM_STRING(ratingEntered);
+                int length = stoi(row[LENGTH_INDEX]);
 
-                MovieRating rating = MovieRating::NOT_RATED;
-
-                if (ratingEntered == ENUM_TO_STR(G))
+                if (this->validateMovieValues(name, studio, year, rating, length))
                 {
-                    rating = MovieRating::G;
+                    Movie* pMovie = new Movie(name, studio, year, rating, length);
+                    output.push_back(pMovie);
                 }
-                else if (ratingEntered == ENUM_TO_STR(PG))
-                {
-                    rating = MovieRating::PG;
-                }
-                else if (ratingEntered == ENUM_TO_STR(PG13))
-                {
-                    rating = MovieRating::PG13;
-                }
-                else if (ratingEntered == ENUM_TO_STR(R))
-                {
-                    rating = MovieRating::R;
-                }
-
-                if (rating == MovieRating::NOT_RATED)
-                {
-                    continue;
-                }
-
-                int length = stoi(row[4]);
-
-                Movie* pMovie = new Movie(name, studio, year, rating, length);
-                output.push_back(pMovie);
             }
             catch (const std::exception& e)
             {
@@ -70,6 +49,28 @@ vector<Movie*> FileReader::read(const string& inFile)
             }
         }
     }
+    return output;
+}
+
+bool FileReader::validateMovieValues(const string& name, const string& studio, int year, MovieRating rating, int length)
+{
+    bool output = true;
+
+    if (name.empty() || studio.empty())
+    {
+        output = false;
+    }
+
+    if (rating == MovieRating::NOT_RATED)
+    {
+        output = false;
+    }
+
+    if (length < 0 || year < 1888)
+    {
+        output = false;
+    }
+
     return output;
 }
 

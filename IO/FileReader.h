@@ -41,6 +41,15 @@ public:
     *       The vector of movie objects found in the file.0
     */
     vector<Movie*> read(const string& inFile);
+
+private:
+    static const int NAME_INDEX = 0;
+    static const int STUDIO_INDEX = 1;
+    static const int YEAR_INDEX = 2;
+    static const int RATING_INDEX = 3;
+    static const int LENGTH_INDEX = 4;
+
+    bool validateMovieValues(const string&, const string&, int, MovieRating, int);
 };
 
 }

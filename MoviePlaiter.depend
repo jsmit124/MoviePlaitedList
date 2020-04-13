@@ -140,7 +140,7 @@
 	"Movie.h"
 	<string>
 
-1586553279 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
+1586807518 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
 	"OutputFormatter.h"
 	"Utils.h"
 	<iostream>
@@ -155,14 +155,14 @@
 1586732868 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.cpp
 	"FileWriter.h"
 
-1586741064 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
+1586808267 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
 	"Enum/MovieRating.h"
 	"Movie.h"
 	<sstream>
 	<vector>
 	<fstream>
 
-1586732557 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.cpp
+1586807867 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.cpp
 	"FileReader.h"
 
 1586741064 /home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.h
@@ -172,14 +172,14 @@
 	"MovieNode.h"
 	<string>
 
-1586548084 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.cpp
+1586807542 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/SaveFileFormatter.cpp
 	"SaveFileFormatter.h"
 
-1586731947 /home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.h
+1586807532 /home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.h
 	"Utils.h"
 	<string>
 
-1586548075 source:/home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.cpp
+1586807382 source:/home/justinsmith/Desktop/MoviePlaiter/Enum/MovieRating.cpp
 	"MovieRating.h"
 
 1586567066 source:/home/justinsmith/Desktop/MoviePlaiter/Enum/SortOrder.cpp

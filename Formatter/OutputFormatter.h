@@ -129,6 +129,7 @@ public:
 
 private:
     const string formatMovieLineOutput(MovieNode*, int, int);
+    bool checkIfPointerIsNull(MovieNode*);
 };
 
 }

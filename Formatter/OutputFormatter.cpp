@@ -16,8 +16,9 @@ OutputFormatter::OutputFormatter()
 const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
+    bool startNodeIsNull = this->checkIfPointerIsNull(startNode);
 
-    if (startNode == 0)
+    if (startNodeIsNull)
     {
         return "";
     }
@@ -31,76 +32,86 @@ const string OutputFormatter::formatMoviesAscendingByName(MovieNode* startNode, 
 const string OutputFormatter::formatMoviesDecendingByName(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
+    bool startNodeIsNull = this->checkIfPointerIsNull(startNode);
 
-    if (startNode == 0)
+    if (startNodeIsNull)
     {
         return "";
     }
 
     output += this->formatMoviesDecendingByName(startNode->getNextName(), longestNameLength, longestStudioLength);
     output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
-
     return output;
 }
 
 const string OutputFormatter::formatMoviesAscendingByLength(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
+    bool startNodeIsNull = this->checkIfPointerIsNull(startNode);
 
-    if (startNode == 0)
+    if (startNodeIsNull)
     {
         return "";
     }
 
     output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
     output += this->formatMoviesAscendingByLength(startNode->getNextLength(), longestNameLength, longestStudioLength);
-
     return output;
 }
 
 const string OutputFormatter::formatMoviesDecendingByLength(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
+    bool startNodeIsNull = this->checkIfPointerIsNull(startNode);
 
-    if (startNode == 0)
+    if (startNodeIsNull)
     {
         return "";
     }
 
     output += this->formatMoviesDecendingByLength(startNode->getNextLength(), longestNameLength, longestStudioLength);
-    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
-
+    output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);\
     return output;
 }
 
 const string OutputFormatter::formatMoviesAscendingByRating(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
+    bool startNodeIsNull = this->checkIfPointerIsNull(startNode);
 
-    if (startNode == 0)
+    if (startNodeIsNull)
     {
         return "";
     }
 
     output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
     output += this->formatMoviesAscendingByRating(startNode->getNextRating(), longestNameLength, longestStudioLength);
-
     return output;
 }
 
 const string OutputFormatter::formatMoviesDecendingByRating(MovieNode* startNode, int longestNameLength, int longestStudioLength)
 {
     string output;
+    bool startNodeIsNull = this->checkIfPointerIsNull(startNode);
 
-    if (startNode == 0)
+    if (startNodeIsNull)
     {
         return "";
     }
 
     output += this->formatMoviesDecendingByRating(startNode->getNextRating(), longestNameLength, longestStudioLength);
     output += this->formatMovieLineOutput(startNode, longestNameLength, longestStudioLength);
-
     return output;
+}
+
+bool OutputFormatter::checkIfPointerIsNull(MovieNode* node)
+{
+    if (node == 0)
+    {
+        return true;
+    }
+
+    return false;
 }
 
 const string OutputFormatter::formatMovieLineOutput(MovieNode* startNode, int longestNameLength, int longestStudioLength)

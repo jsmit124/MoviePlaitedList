@@ -69,6 +69,8 @@ private:
 
     Movie* pMovie;
 
+    void determineIfValidNameEntered(const string&);
+    void determineIfValidStudioEntered(const string&);
     MovieRating determineAndSetRatingBasedOnUserInput();
     int determineAndSetYearBasedOnUserInput();
     int determineAndSetLengthBasedOnUserInput();

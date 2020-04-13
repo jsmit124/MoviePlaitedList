@@ -28,12 +28,14 @@ void AddMovieWindow::okHandler()
     string name = this->nameInput->value();
     string studio = this->studioInput->value();
 
-
     try
     {
-        MovieRating rating = this->determineAndSetRatingBasedOnUserInput();
+        this->determineIfValidNameEntered(name);
+        this->determineIfValidStudioEntered(studio);
         int year = this->determineAndSetYearBasedOnUserInput();
+        MovieRating rating = this->determineAndSetRatingBasedOnUserInput();
         int length = this->determineAndSetLengthBasedOnUserInput();
+
         this->pMovie = new Movie(name, studio, year, rating, length);
         this->hide();
     }
@@ -42,6 +44,22 @@ void AddMovieWindow::okHandler()
         fl_message("%s", message);
     }
 
+}
+
+void AddMovieWindow::determineIfValidNameEntered(const string& name)
+{
+    if (name.empty())
+    {
+        throw "Please enter a name.";
+    }
+}
+
+void AddMovieWindow::determineIfValidStudioEntered(const string& studio)
+{
+    if (studio.empty())
+    {
+        throw "Please enter a studio.";
+    }
 }
 
 MovieRating AddMovieWindow::determineAndSetRatingBasedOnUserInput()

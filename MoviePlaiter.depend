@@ -78,7 +78,7 @@
 1586808993 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
 	"AddMovieWindow.h"
 
-1586741064 /home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.h
+1586820249 /home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.h
 	"Utils.h"
 	"MovieRating.h"
 	"OKCancelWindow.h"
@@ -135,12 +135,12 @@
 	<string>
 	<iostream>
 
-1586741064 /home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.h
+1586819977 /home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.h
 	"MovieNode.h"
 	"Movie.h"
 	<string>
 
-1586807518 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
+1586820039 source:/home/justinsmith/Desktop/MoviePlaiter/Formatter/OutputFormatter.cpp
 	"OutputFormatter.h"
 	"Utils.h"
 	<iostream>

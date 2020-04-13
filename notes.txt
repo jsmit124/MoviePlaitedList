@@ -1,1 +1,6 @@
 List known bugs or missing functionality here.
+Can't find any bugs
+
+Some things I added to my implementation however -
+1. I went under the assumption that the NOT_RATED enum was for invalid rating entries. As such,  if any of those were found in loading files or input for adding a movie, they were handled as errors.
+2. I set the lower-bound for movies being added as 1888. As I found online the first movie ever made was made in 1888, so no movies should come before then.

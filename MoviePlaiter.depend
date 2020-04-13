@@ -75,7 +75,7 @@
 	<sstream>
 	<string>
 
-1586808618 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
+1586808993 source:/home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.cpp
 	"AddMovieWindow.h"
 
 1586741064 /home/justinsmith/Desktop/MoviePlaiter/View/AddMovieWindow.h
@@ -105,7 +105,7 @@
 1586738088 source:/home/justinsmith/Desktop/MoviePlaiter/View/OKCancelWindow.cpp
 	"OKCancelWindow.h"
 
-1586741064 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.cpp
+1586809853 source:/home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.cpp
 	"MovieNode.h"
 
 1586741064 /home/justinsmith/Desktop/MoviePlaiter/Model/MovieNode.h
@@ -121,7 +121,7 @@
 	<string>
 	<iostream>
 
-1586732901 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
+1586809730 source:/home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.cpp
 	"Controller.h"
 
 1586741064 /home/justinsmith/Desktop/MoviePlaiter/Controller/Controller.h
@@ -155,7 +155,7 @@
 1586732868 source:/home/justinsmith/Desktop/MoviePlaiter/IO/FileWriter.cpp
 	"FileWriter.h"
 
-1586808267 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
+1586809209 /home/justinsmith/Desktop/MoviePlaiter/IO/FileReader.h
 	"Enum/MovieRating.h"
 	"Movie.h"
 	<sstream>

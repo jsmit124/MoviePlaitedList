@@ -45,7 +45,7 @@ void MovieNode::setNextRating(MovieNode* nextRating)
 
 MovieNode::~MovieNode()
 {
-    //dtor
+    delete this->movieInfo;
 }
 
 }

@@ -331,7 +331,17 @@ int MoviePlaitedList::getListSize()
 
 MoviePlaitedList::~MoviePlaitedList()
 {
-    //dtor
+    MovieNode* currNode = this->headNameNode;
+    while (currNode != 0)
+    {
+        MovieNode* nextNode = currNode->getNextName();
+        delete currNode;
+        currNode = nextNode;
+    }
+
+    this->headNameNode = 0;
+    this->headLengthNode = 0;
+    this->headRatingNode = 0;
 }
 
 }
